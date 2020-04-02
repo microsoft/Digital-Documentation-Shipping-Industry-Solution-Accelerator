@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "MunichProxy": {
+      "commandName": "Project",
+      "commandLineArgs": "start"
+    },
+    "newProfile1": {
+      "commandName": "Snapshot Debugger"
+    }
+  }
+}

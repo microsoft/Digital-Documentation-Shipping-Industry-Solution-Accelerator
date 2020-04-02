@@ -1,0 +1,63 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+variables:
+ workingDirectory: '$(System.DefaultWorkingDirectory)/src/ContosoCargo.DigitalDocument.TokenService.Host'
+
+ vmImageName: 'windows-2019'
+ azureSubscription: 'ContosoCargoAzureFunction'
+
+# Function app name
+ functionAppName: 'contosocargo'
+
+pool:
+  vmImage: $(vmImageName)
+
+stages:
+- stage: Build
+  displayName: Build Stage
+  jobs:
+  - job: Build
+  
+    displayName: Build
+    pool:
+      vmImage: $(vmImageName)
+  
+    steps:
+    - task: DotNetCoreCLI@2
+      displayName: Build Project
+      inputs:
+       command: build
+       arguments: --output $(System.DefaultWorkingDirectory)/publish_output --configuration Release
+       projects: $(System.DefaultWorkingDirectory)/src/ContosoCargo.DigitalDocument.TokenService.Host/*.csproj
+       workingDirectory: src/ContosoCargo.DigitalDocument.TokenService.Host
+    
+    - task: ArchiveFiles@2
+      displayName: 'Archive files'
+      inputs:
+        rootFolderOrFile: '$(System.DefaultWorkingDirectory)/publish_output'
+        archiveType: zip
+        includeRootFolder: false
+        archiveFile: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
+        replaceExistingArchive: true
+
+    - task: PublishBuildArtifacts@1
+      displayName: 'Publish Artifact: Drop'
+      inputs:
+        PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+        artifactName: 'drop'
+
+    - task: AzureFunctionApp@1
+      displayName: 'Azure functions app deploy: contosocargo'
+      inputs:
+              azureSubscription: '$(azureSubscription)'
+              appType: functionApp
+              appName: $(functionAppName)
+              package: $(System.ArtifactsDirectory)/**/*.zip
+              
+              

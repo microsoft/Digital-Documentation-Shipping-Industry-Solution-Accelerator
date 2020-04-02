@@ -1,0 +1,978 @@
+{
+	"info": {
+		"_postman_id": "38337cc6-f287-42f5-8274-bf8721e778d9",
+		"name": "Gateway API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Accounts",
+			"item": [
+				{
+					"name": "GET Account",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "582d7508-80a7-47ed-b09d-2089079fa8cb",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{PROTOCOL}}://{{TOKEN_SERVICE_DNS}}.{{HOST}}:{{PORT}}/api/v1/accounts/{{ACCOUNT_ID}}",
+							"protocol": "{{PROTOCOL}}",
+							"host": [
+								"{{TOKEN_SERVICE_DNS}}",
+								"{{HOST}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"api",
+								"v1",
+								"accounts",
+								"{{ACCOUNT_ID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LIST Accounts",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "b90e82e7-69af-4b50-a7f6-0d9c861a0baf",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{PROTOCOL}}://{{TOKEN_SERVICE_DNS}}.{{HOST}}:{{PORT}}/api/v1/accounts",
+							"protocol": "{{PROTOCOL}}",
+							"host": [
+								"{{TOKEN_SERVICE_DNS}}",
+								"{{HOST}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"api",
+								"v1",
+								"accounts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT Account",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "a72dfddd-0177-4719-9b9e-49ae2f96053b",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "b89aec22-77e8-4561-afcf-8b393b029f6a",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);\r",
+									"postman.setEnvironmentVariable(\"ACCOUNT_ID\", jsonData.id);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"name\": \"Test\",\r\n\t\"description\": \"Test Account\",\r\n\t\"blockchainNetworkId\": \"{{NETWORK_ID}}\",\r\n\t\"partyId\": \"{{PARTY_ID}}\",\r\n\t\"requestId\": \"{{REQUEST_ID}}\"\r\n}"
+						},
+						"url": {
+							"raw": "{{PROTOCOL}}://{{TOKEN_SERVICE_DNS}}.{{HOST}}:{{PORT}}/api/v1/accounts",
+							"protocol": "{{PROTOCOL}}",
+							"host": [
+								"{{TOKEN_SERVICE_DNS}}",
+								"{{HOST}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"api",
+								"v1",
+								"accounts"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Parties",
+			"item": [
+				{
+					"name": "GET Party",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{PROTOCOL}}://{{TOKEN_SERVICE_DNS}}.{{HOST}}:{{PORT}}/api/v1/parties/{{PARTY_ID}}",
+							"protocol": "{{PROTOCOL}}",
+							"host": [
+								"{{TOKEN_SERVICE_DNS}}",
+								"{{HOST}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"api",
+								"v1",
+								"parties",
+								"{{PARTY_ID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LIST Party Accounts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{PROTOCOL}}://{{TOKEN_SERVICE_DNS}}.{{HOST}}:{{PORT}}/api/v1/parties/{{PARTY_ID}}/accounts",
+							"protocol": "{{PROTOCOL}}",
+							"host": [
+								"{{TOKEN_SERVICE_DNS}}",
+								"{{HOST}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"api",
+								"v1",
+								"parties",
+								"{{PARTY_ID}}",
+								"accounts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LIST Parties",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{PROTOCOL}}://{{TOKEN_SERVICE_DNS}}.{{HOST}}:{{PORT}}/api/v1/parties",
+							"protocol": "{{PROTOCOL}}",
+							"host": [
+								"{{TOKEN_SERVICE_DNS}}",
+								"{{HOST}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"api",
+								"v1",
+								"parties"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT Party",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "a72dfddd-0177-4719-9b9e-49ae2f96053b",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "bc619b4e-fe00-4236-992d-c520fec13035",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);\r",
+									"postman.setEnvironmentVariable(\"PARTY_ID\", jsonData.id);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"name\": \"Test Party\",\r\n\t\"requestId\": \"{{REQUEST_ID}}\"\r\n}"
+						},
+						"url": {
+							"raw": "{{PROTOCOL}}://{{TOKEN_SERVICE_DNS}}.{{HOST}}:{{PORT}}/api/v1/parties",
+							"protocol": "{{PROTOCOL}}",
+							"host": [
+								"{{TOKEN_SERVICE_DNS}}",
+								"{{HOST}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"api",
+								"v1",
+								"parties"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "d349bc7b-4fe7-46fc-ac50-51f6cbc4e845",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "cf0923d7-82d2-4c38-b004-0efc7f99f95a",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Operations",
+			"item": [
+				{
+					"name": "GET Operation",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{PROTOCOL}}://{{TOKEN_SERVICE_DNS}}.{{HOST}}:{{PORT}}/api/v1/operations/{{OPERATION_ID}}",
+							"protocol": "{{PROTOCOL}}",
+							"host": [
+								"{{TOKEN_SERVICE_DNS}}",
+								"{{HOST}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"api",
+								"v1",
+								"operations",
+								"{{OPERATION_ID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LIST Operations",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{PROTOCOL}}://{{TOKEN_SERVICE_DNS}}.{{HOST}}:{{PORT}}/api/v1/operations",
+							"protocol": "{{PROTOCOL}}",
+							"host": [
+								"{{TOKEN_SERVICE_DNS}}",
+								"{{HOST}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"api",
+								"v1",
+								"operations"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Blockchain Network",
+			"item": [
+				{
+					"name": "LIST Blockchain Networks",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{PROTOCOL}}://{{TOKEN_SERVICE_DNS}}.{{HOST}}:{{PORT}}/api/v1/blockchainnetworks",
+							"protocol": "{{PROTOCOL}}",
+							"host": [
+								"{{TOKEN_SERVICE_DNS}}",
+								"{{HOST}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"api",
+								"v1",
+								"blockchainnetworks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Blockchain Networks",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{PROTOCOL}}://{{TOKEN_SERVICE_DNS}}.{{HOST}}:{{PORT}}/api/v1/blockchainnetworks/{{NETWORK_ID}}",
+							"protocol": "{{PROTOCOL}}",
+							"host": [
+								"{{TOKEN_SERVICE_DNS}}",
+								"{{HOST}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"api",
+								"v1",
+								"blockchainnetworks",
+								"{{NETWORK_ID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT Blockchain Network",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "58fa7454-d815-47fd-b4a4-b0c27353d429",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "e8236654-11cb-4543-b6ad-fc4cd4f87632",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);\r",
+									"postman.setEnvironmentVariable(\"NETWORK_ID\", jsonData.id);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"TestNetwork\",\n    \"description\": \"Westlake Quorum\",\n    \"blockchainPlatformType\": \"EthereumFamily\",\n    \"blockchainPlatformName\": \"Ethereum Quorum\",\n    \"blockchainNode\": \"https://cicd.blockchain.azure.com:3200/V7nd2Sfm1sOkHhORsc3U8Vi_\",\n    \"requestId\": \"{{REQUEST_ID}}\"\n}"
+						},
+						"url": {
+							"raw": "{{PROTOCOL}}://{{TOKEN_SERVICE_DNS}}.{{HOST}}:{{PORT}}/api/v1/blockchainnetworks",
+							"protocol": "{{PROTOCOL}}",
+							"host": [
+								"{{TOKEN_SERVICE_DNS}}",
+								"{{HOST}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"api",
+								"v1",
+								"blockchainnetworks"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Templates",
+			"item": [
+				{
+					"name": "GET Template",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{PROTOCOL}}://{{TOKEN_SERVICE_DNS}}.{{HOST}}:{{PORT}}/api/v1/templates/{{TEMPLATE_ID}}",
+							"protocol": "{{PROTOCOL}}",
+							"host": [
+								"{{TOKEN_SERVICE_DNS}}",
+								"{{HOST}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"api",
+								"v1",
+								"templates",
+								"{{TEMPLATE_ID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Template Swagger",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{PROTOCOL}}://{{TOKEN_SERVICE_DNS}}.{{HOST}}:{{PORT}}/api/v1/templates/{{TEMPLATE_ID}}/openapi",
+							"protocol": "{{PROTOCOL}}",
+							"host": [
+								"{{TOKEN_SERVICE_DNS}}",
+								"{{HOST}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"api",
+								"v1",
+								"templates",
+								"{{TEMPLATE_ID}}",
+								"openapi"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LIST Templates",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{PROTOCOL}}://{{TOKEN_SERVICE_DNS}}.{{HOST}}:{{PORT}}/api/v1/templates",
+							"protocol": "{{PROTOCOL}}",
+							"host": [
+								"{{TOKEN_SERVICE_DNS}}",
+								"{{HOST}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"api",
+								"v1",
+								"templates"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT Template",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"UniqueName\": \"TT\",\r\n\t\"DisplayName\": \"Test Template\",\r\n\t\"Description\": \"Used for test\",\r\n\t\"TTFFormula\": \"[tF{m,b,t,l}]\"\r\n}"
+						},
+						"url": {
+							"raw": "{{PROTOCOL}}://{{TOKEN_SERVICE_DNS}}.{{HOST}}:{{PORT}}/api/v1/templates",
+							"protocol": "{{PROTOCOL}}",
+							"host": [
+								"{{TOKEN_SERVICE_DNS}}",
+								"{{HOST}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"api",
+								"v1",
+								"templates"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "d349bc7b-4fe7-46fc-ac50-51f6cbc4e845",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "cf0923d7-82d2-4c38-b004-0efc7f99f95a",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Tokens",
+			"item": [
+				{
+					"name": "GET Token",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{PROTOCOL}}://{{TOKEN_SERVICE_DNS}}.{{HOST}}:{{PORT}}/api/v1/templates/{{TEMPLATE_ID}}/tokens/{{TOKEN_ID}}",
+							"protocol": "{{PROTOCOL}}",
+							"host": [
+								"{{TOKEN_SERVICE_DNS}}",
+								"{{HOST}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"api",
+								"v1",
+								"templates",
+								"{{TEMPLATE_ID}}",
+								"tokens",
+								"{{TOKEN_ID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LIST Tokens",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{PROTOCOL}}://{{TOKEN_SERVICE_DNS}}.{{HOST}}:{{PORT}}/api/v1/templates/{{TEMPLATE_ID}}/tokens",
+							"protocol": "{{PROTOCOL}}",
+							"host": [
+								"{{TOKEN_SERVICE_DNS}}",
+								"{{HOST}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"api",
+								"v1",
+								"templates",
+								"{{TEMPLATE_ID}}",
+								"tokens"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT Token",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "a72dfddd-0177-4719-9b9e-49ae2f96053b",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "e1b3e254-a158-4eb0-baf7-67dee75eeacc",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);\r",
+									"postman.setEnvironmentVariable(\"TOKEN_ID\", jsonData.id);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"callerAccountId\": \"{{ACCOUNT_ID}}\",\r\n\t\"FunctionParams\": {\r\n\t\t\"name\": \"string\",\r\n\t\t\"initialAmount\": 1000,\r\n\t\t\"symbol\": \"TS\",\r\n\t\t\"decimals\": 0\r\n\t},\r\n\t\"AdditionalMetaData\": {},\r\n\t\"requestId\": \"{{REQUEST_ID}}\"\r\n}"
+						},
+						"url": {
+							"raw": "{{PROTOCOL}}://{{TOKEN_SERVICE_DNS}}.{{HOST}}:{{PORT}}/api/v1/templates/{{TEMPLATE_ID}}/tokens",
+							"protocol": "{{PROTOCOL}}",
+							"host": [
+								"{{TOKEN_SERVICE_DNS}}",
+								"{{HOST}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"api",
+								"v1",
+								"templates",
+								"{{TEMPLATE_ID}}",
+								"tokens"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST Token Action",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "93f04854-12a5-4a26-bead-f291936cb0af",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"callerAccountId\": \"{{ACCOUNT_ID}}\",\r\n\t\"FunctionParams\": {},\r\n\t\"RequestId\": \"{{REQUEST_ID}}\"\r\n}"
+						},
+						"url": {
+							"raw": "{{PROTOCOL}}://{{TOKEN_SERVICE_DNS}}.{{HOST}}:{{PORT}}/api/v1/templates/{{TEMPLATE_ID}}/tokens/{{TOKEN_ID}}/totalSupply",
+							"protocol": "{{PROTOCOL}}",
+							"host": [
+								"{{TOKEN_SERVICE_DNS}}",
+								"{{HOST}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"api",
+								"v1",
+								"templates",
+								"{{TEMPLATE_ID}}",
+								"tokens",
+								"{{TOKEN_ID}}",
+								"totalSupply"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "d349bc7b-4fe7-46fc-ac50-51f6cbc4e845",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "cf0923d7-82d2-4c38-b004-0efc7f99f95a",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Token Service Admin (Control Plane)",
+			"item": [
+				{
+					"name": "GET Token Service",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "582d7508-80a7-47ed-b09d-2089079fa8cb",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{PROTOCOL}}://{{RP_HOST}}:{{RP_PORT}}/api/v1/tokenservices/{{TOKEN_SERVICE_ID}}",
+							"protocol": "{{PROTOCOL}}",
+							"host": [
+								"{{RP_HOST}}"
+							],
+							"port": "{{RP_PORT}}",
+							"path": [
+								"api",
+								"v1",
+								"tokenservices",
+								"{{TOKEN_SERVICE_ID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LIST Token Services",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "b90e82e7-69af-4b50-a7f6-0d9c861a0baf",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{PROTOCOL}}://{{RP_HOST}}:{{RP_PORT}}/api/v1/tokenservices",
+							"protocol": "{{PROTOCOL}}",
+							"host": [
+								"{{RP_HOST}}"
+							],
+							"port": "{{RP_PORT}}",
+							"path": [
+								"api",
+								"v1",
+								"tokenservices"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT Account",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "a72dfddd-0177-4719-9b9e-49ae2f96053b",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "99105d99-6bd5-4f0a-8776-acd66efb03ed",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);\r",
+									"postman.setEnvironmentVariable(\"TOKEN_SERVICE_ID\", jsonData.id);\r",
+									"postman.setEnvironmentVariable(\"TOKEN_SERVICE_DNS\", jsonData.dnsName);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"dnsName\": \"alitest1\",\r\n  \"description\": \"Test Token Service\",\r\n  \"subscription\": \"subId\",\r\n  \"tenantId\": \"{{TENANT_NAME}}\",\r\n  \"resourceName\": \"tk\",\r\n  \"resourceGroupName\": \"rgName\",\r\n  \"requestId\": \"{{REQUEST_ID}}\"\r\n}"
+						},
+						"url": {
+							"raw": "{{PROTOCOL}}://{{RP_HOST}}:{{RP_PORT}}/api/v1/tokenservices",
+							"protocol": "{{PROTOCOL}}",
+							"host": [
+								"{{RP_HOST}}"
+							],
+							"port": "{{RP_PORT}}",
+							"path": [
+								"api",
+								"v1",
+								"tokenservices"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{accessToken}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "fb21b79f-6a00-4edf-8d46-d4e82e48cb83",
+				"type": "text/javascript",
+				"exec": [
+					"const TEN_MINUTES = 600",
+					"const expiration = parseInt(pm.environment.get('accessExpiration'))",
+					"const now = (new Date().getTime()) / 1000",
+					"",
+					"const getJWTToken = (tenantName, rerource, spId, spKey) => {",
+					"    const echoPostRequest = { ",
+					"      method: 'POST',",
+					"      url: `https://login.microsoftonline.com/${tenantName}/oauth2/token`,",
+					"      headers: ",
+					"      { ",
+					"        'cache-control': 'no-cache',",
+					"        'Content-Type': 'application/x-www-form-urlencoded' ",
+					"      },",
+					"      body: ",
+					"      {",
+					"        mode: 'urlencoded',",
+					"        urlencoded: ",
+					"        [",
+					"            { key: \"resource\", value: rerource, disabled: false},",
+					"            { key: \"client_id\", value: spId, disabled: false},",
+					"            { key: \"client_secret\", value: spKey, disabled :false},",
+					"            { key: \"grant_type\", value: \"client_credentials\", disabled: false}",
+					"        ]",
+					"      }",
+					"    };",
+					"    ",
+					"    pm.sendRequest(echoPostRequest, (err, res) => {",
+					"        if (err) {",
+					"            throw new Error(err);",
+					"        }",
+					"        ",
+					"        const response = res.json()",
+					"        ",
+					"        if (!response.access_token) {",
+					"            throw new Error(response.error_description);",
+					"        }",
+					"        ",
+					"        pm.environment.set('accessToken', response.access_token);",
+					"        pm.environment.set('accessExpiration', response.expires_on);",
+					"        console.log('Successfully set the token');",
+					"    });",
+					"}",
+					"",
+					"function uuidv4() {",
+					"  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {",
+					"    var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);",
+					"    return v.toString(16);",
+					"  });",
+					"}",
+					"",
+					"",
+					"// Get the token does not exists or the life of it is less than 10 minutes fetch a new token",
+					"if (!pm.environment.get('accessToken') || !expiration || ((expiration - now) < TEN_MINUTES))",
+					"{",
+					"    getJWTToken(pm.environment.get('TENANT_NAME'), pm.environment.get('MUNICH_RESOURCE'), pm.environment.get('SP_APP_ID'), pm.environment.get('SP_APP_SECRET'));",
+					"}",
+					"",
+					"",
+					"pm.environment.set('REQUEST_ID',  uuidv4());",
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "8fc40c36-bf9c-4f15-86c6-cb6645c93d93",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
