@@ -39,7 +39,7 @@
                     }
                 ],
                 "databaseAccountOfferType": "[parameters('cosmosTier')]"
-            }
+              }
         },
         {
             "type": "Microsoft.Blockchain/blockchainMembers",
