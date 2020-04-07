@@ -7,11 +7,14 @@ az login
 
 az account set --subscription $subscriptionID
 
+#create resource group
 az group create `
     --location $resourceGroupLocation `
     --name $resourceGroupName `
     --subscription $subscriptionID
 
+#create cosmos and blockchain accounts
+#use the second paramters field to override resource location specified in template
 az group deployment create `
    --name "deployment"  `
    --resource-group $resourceGroupName `
@@ -19,6 +22,8 @@ az group deployment create `
    --parameters cmsbcdeploy.parameters.json `
    --parameters cosmosLocation=${cmsbcLocation} bcLocation=${cmsbcLocation}
 
+#create function app with serivce plan and and storage account
+#location is the same as resource group
 az group deployment create `
    --name "deploymentfunction" `
    --resource-group $resourceGroupName `
