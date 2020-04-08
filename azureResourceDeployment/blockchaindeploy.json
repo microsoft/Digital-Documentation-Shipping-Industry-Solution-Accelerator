@@ -3,72 +3,54 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "resourceName": {
-            "type": "string"
+            "type": "String",
+            "metadata": {
+                "description": "Use as a base-template to name the resources deployed in Azure."
+            }
         },
-        "cosmosLocation": {
-            "type": "string"
-        },
-        "cosmosTier": {
-            "type": "string"
+        "bcLocation": {
+            "type": "String"
         },
         "bcMemberPassword": {
             "type": "securestring",
             "metadata": {
                 "description": "Password for the BlockChain Administrator. The password must password must have 3 of the following: 1 lower case character, 1 upper case character, 1 number, and 1 special character that is not '#', '`', '*', '\"', ''', '-', '%',' ' or ';'."
             }
-        },
-        "bcLocation": {
-            "type": "string"
         }
     },
     "variables": {
         "suffix": "[substring(toLower(uniqueString(resourceGroup().id, resourceGroup().location)),0,5)]",
-        "cosmosAccountName": "[tolower(concat(substring(parameters('resourceName'), 0, min(length(parameters('resourceName')),16)), 'cms', variables('suffix')))]",
         "bcMemberName": "[concat(substring(parameters('resourceName'), 0, min(length(parameters('resourceName')),16)), 'bc', variables('suffix'))]"
     },
     "resources": [
-        {
-            "type": "Microsoft.DocumentDB/databaseAccounts",
-            "apiVersion": "2016-03-31",
-            "name": "[variables('cosmosAccountName')]",
-            "location": "[parameters('cosmosLocation')]",
-            "properties": {
-                "locations": [
-                    {
-                        "locationName": "[parameters('cosmosLocation')]"
-                    }
-                ],
-                "databaseAccountOfferType": "[parameters('cosmosTier')]"
-              }
-        },
         {
             "type": "Microsoft.Blockchain/blockchainMembers",
             "apiVersion": "2018-06-01-preview",
             "name": "[variables('bcMemberName')]",
             "location": "[parameters('bcLocation')]",
-            "tags": {
-                "consortium": "Consortium"
-            },
             "sku": {
                 "name": "S0",
                 "tier": "Standard"
             },
+            "kind": "Quorum",
             "properties": {
-                "protocol": "Quorum",
-                "consensus": "Default",
-                "password": "[parameters('bcMemberPassword')]",
                 "validatorNodesSku": {
                     "capacity": 2
                 },
+                "password": "[parameters('bcMemberPassword')]",
+                "consensus": "Default",
                 "consortium": "[concat('Consort', variables('bcMemberName'))]",
+                "consortiumMemberDisplayName": "[variables('bcMemberName')]",
                 "consortiumManagementAccountPassword": "[parameters('bcMemberPassword')]",
+                "consortiumRole": "ADMIN",
                 "firewallRules": [
                     {
                         "ruleName": "AllowAll",
                         "startIpAddress": "0.0.0.0",
                         "endIpAddress": "255.255.255.255"
                     }
-                ]
+                ],
+                "protocol": "Quorum"
             }
         }
     ],

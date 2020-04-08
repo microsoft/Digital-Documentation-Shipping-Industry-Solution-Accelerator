@@ -2,21 +2,28 @@
     "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-        "funcAppName": {
+        "resourceName": {
+            "type": "string",
+            "metadata": {
+                "description": "Use as a base-template to name the resources deployed in Azure."
+            }
+        },
+        "fxLocation": {
             "type": "string"
         }
     },
     "variables": {
-        "funcAppName": "[toLower(concat(parameters('funcAppName')))]",
-        "funcStorageName": "[tolower(concat(substring(parameters('funcAppName'), 0, min(length(parameters('funcAppName')),16)), 'stg'))]",
-        "serverFarmName": "[concat(substring(parameters('funcAppName'), 0, min(length(parameters('funcAppName')),14)), '-srv-')]"
+        "suffix": "[substring(toLower(uniqueString(resourceGroup().id, parameters('fxLocation'))),0,5)]",
+        "funcAppName": "[toLower(concat(parameters('resourceName'), variables('suffix')))]",
+        "funcStorageName": "[tolower(concat(substring(parameters('resourceName'), 0, min(length(parameters('resourceName')),16)), 'stg', variables('suffix')))]",
+        "serverFarmName": "[concat(substring(parameters('resourceName'), 0, min(length(parameters('resourceName')),14)), '-srv-', variables('suffix'))]"
     },
     "resources": [
         {
             "apiVersion": "2015-08-01",
             "type": "Microsoft.Web/sites",
             "name": "[variables('funcAppName')]",
-            "location": "[resourceGroup().location]",
+            "location": "[parameters('fxLocation')]",
             "kind": "functionapp",
             "dependsOn": [
                 "[resourceId('Microsoft.Web/serverfarms',variables('serverFarmName'))]",
@@ -62,7 +69,7 @@
             "type": "Microsoft.Storage/storageAccounts",
             "apiVersion": "2018-07-01",
             "name": "[variables('funcStorageName')]",
-            "location": "[resourceGroup().location]",
+            "location": "[parameters('fxLocation')]",
             "tags": {
                 "displayName": "funStorageName"
             },
@@ -75,7 +82,7 @@
             "type": "Microsoft.Web/serverfarms",
             "apiVersion": "2018-02-01",
             "name": "[variables('serverFarmName')]",
-            "location": "[resourceGroup().location]",
+            "location": "[parameters('fxLocation')]",
             "sku": {
                 "name": "Y1",
                 "tier": "Dynamic"
