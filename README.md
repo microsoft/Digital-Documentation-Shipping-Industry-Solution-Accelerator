@@ -3,7 +3,7 @@
 ## About this repository
 This accelerator was built to provide developers with all of the resources needed to quickly build an initial Digital Documentation for Shipping Quote system. Use this accelerator to jump start your development efforts with Blockchain in Azure.
 
-This repository contains the steps, scripts, code, and tools to create a Blockchain application. 00_Resource_Deployment will create the necessary supporting resources in Azure (Functions, Blockchain Service, and Cosmos DB). 01_Solution_Deployment will configure and deploy the client app as well as the functions to the Azure resource. Finally 02_Application_Deployment will deploy and host your application either locally or in your subscription.
+This repository contains the steps, scripts, code, and tools to create a Blockchain application. 00_Resource_Deployment will create the necessary supporting resources in Azure (Functions, Blockchain Service, and Cosmos DB). 01_API_Host_Deployment will configure and deploy the client app as well as the functions to the Azure resource. Finally 02_Application_Deployment will deploy and host your application either locally or in your subscription.
 
 ## Prerequisites
 In order to successfully complete your solution, you will need to have access to and or provisioned the following:
@@ -24,7 +24,7 @@ For additional training and support, please see:
 ## Getting Started and Process Overview
 Clone/download this repo onto your computer and then walk through each of these folders in order, following the steps outlined in each of the README files.  After completion of all steps, you will have a working end-to-end solution with the following architecture:
 
-![Microservices Architecture](./References/architecture.JPG)
+![Microservices Architecture](./References/architecture.jpg)
 
 
 ### [00 - Resource Deployment](./00_Resource_Deployment)
@@ -32,15 +32,12 @@ The resources in this folder can be used to deploy the required resources into y
 
 After deployed, you will have a Cosmos DB account and database, Azure storage, and Kubernetes cluster deployed in your specified resource group.
 
-### [01 - Solution Deployment](./01_Hyperledger_Fabric_Deployment)
-This folder contains an Azure Pipeline. To prepare the environment and deploy the infrastructer run the [deploy script](./01_Hyperledger_Fabric_Deployment/deploy.ps1).
+### [01 - API Host Deployment](./01_API_Host_Deployment)
+This folder contains an Azure Pipeline, which add functions to your Azure Functions resource [deploy script](./01_Solution_Deployment/azure-pipelines.yml).
 
-Running this script will deploy a basic fabric network consisting of two organizations: one peer organization and one orderer organization. To read more about hyperledger reference the [Hyperledger Fabric Documentation](https://hyperledger-fabric.readthedocs.io/en/release-1.4/).
+This pipeline will help you deploy the functions needed to handle the API calls from the quote and booking transaction.
 
-### [02 - Hyperledger Fabric Client](./02_Hyperledger_Fabric_Client)
-This folder contains the Kotlin Chaincode and Hyperledger Fabric server used to communicate with the blockchain network. The script in this folder will pull the Fabric Chaincode, Client, and gRPC server. This image will install the chaincode and allow the application to execute against the Blockchain network. Follow the provided instructions.
-
-### [03 - Application Deployment](./03_Application_Deployment)
+### [02 - Application Deployment](./02_Application_Deployment)
 This folder contains the .net services for the proof content storage service, transaction tracker, transaction indexer, and gRPC Fabric Client. The Angular web application is also started and hosted with these services. Service Fabric is used to host this application.
 
 ## Links
