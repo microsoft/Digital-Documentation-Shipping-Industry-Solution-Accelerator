@@ -1,10 +1,18 @@
-$subscriptionID= '036cb61a-ccf5-49ea-90fc-391eb7720410'
+# These values need to be altered before deployment
+$subscriptionID= '<subscription ID>'
 $resourceGroupName = 'Digital_Shipping_Blockchain'
-$resourceGroupLocation= 'KoreaSouth'
+$resourceGroupLocation= 'CentralUS'
 
-#these values can be used to override resource parameters specified in template
-$cmsLocation = 'KoreaSouth'
-$bcLocation = 'JapanEast'
+
+# These values can be used to override resource parameters specified in template.
+# (e.g.    --parameters bcLocation=${bcLocation})
+
+# Default ARM template parameters:
+# - resourceName = 'contosocargo',
+# - cmsLocation = 'West US 2'
+# - bcLocation = 'West US 2'
+# - fxLocation = 'Central US'
+
 
 az login
 
@@ -21,16 +29,14 @@ az group deployment create `
    --name "cmsdeployment"  `
    --resource-group $resourceGroupName `
    --template-file cosmosdeploy.json `
-   --parameters cosmosdeploy.parameters.json `
-   --parameters cmsLocation=${cmsLocation}
+   --parameters cosmosdeploy.parameters.json
 
 #create blockchain account
 az group deployment create `
    --name "bcdeployment"  `
    --resource-group $resourceGroupName `
    --template-file blockchaindeploy.json `
-   --parameters blockchaindeploy.parameters.json `
-   --parameters bcLocation=${bcLocation}
+   --parameters blockchaindeploy.parameters.json
 
 #create function app with serivce plan and and storage account
 #location is the same as resource group
