@@ -31,3 +31,4 @@ To run the [PowerShell script](./deploy.ps1):
 3. Run the [PowerShell script](./deploy.ps1). If you have PowerShell opened to this folder run the command:
 `./deploy.ps1`
 4. You will then be prompted to login.
+5. Log in to your Azure Subscription, verify the resources are there, copy the host key and service endpoint in the Azure Functions

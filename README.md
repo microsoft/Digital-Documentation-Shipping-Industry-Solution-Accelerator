@@ -32,22 +32,13 @@ The resources in this folder can be used to deploy the required resources into y
 
 After deployed, you will have a Cosmos DB account and database, Azure storage, and Kubernetes cluster deployed in your specified resource group.
 
-### [01 - API Host Deployment](./01_API_Host_Deployment)
-This folder contains an Azure Pipeline, which add functions to your Azure Functions resource [deploy script](./01_Solution_Deployment/azure-pipelines.yml).
+### [01 - Source Code Deployment](./01_Source_Code_Deployment)
+This folder contains an Azure Pipeline, which add functions to your Azure Functions resource [source code pipeline](./01_Source_Code_Deployment/azure-pipelines.yml).
 
 This pipeline will help you deploy the functions needed to handle the API calls from the quote and booking transaction.
 
 ### [02 - Application Deployment](./02_Application_Deployment)
-This folder contains the .net services for the proof content storage service, transaction tracker, transaction indexer, and gRPC Fabric Client. The Angular web application is also started and hosted with these services. Service Fabric is used to host this application.
-
-## Links
-Hosted Site: [Healthcare Blockchain Solution](http://healthcare-apphosting.southcentralus.cloudapp.azure.com/login)
-
-*Use income less than 11000 and a NY Zip Code for a profile to qualify*
-
-Video: [Healthcare Blockchain Solution Video](https://msit.microsoftstream.com/video/7f62ce8c-39e1-40d6-8adb-cbf298f31dfe)
-
-*Or download [Healthcare Blockchain Solution Video](healthcare_solution_video.mp4)*
+This folder contains the client application and token service for the solutiuon.
 
 
 ## License
