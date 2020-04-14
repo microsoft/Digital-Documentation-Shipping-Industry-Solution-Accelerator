@@ -1,6 +1,6 @@
-# Source Code Deployment
+# Application Deployment
 
-This folder contains a YAML script that can be used to upload functions into your [Azure Functions](https://azure.microsoft.com/en-us/services/functions/) resource that you deployed in the previous step.
+This folder contains documentation on how to run the Digital Documentation Shipping Industry Solution
 
 ![Microservices Architecture](./References/architecture_function.jpg)
  
