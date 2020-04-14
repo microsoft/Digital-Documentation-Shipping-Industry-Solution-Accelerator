@@ -2,7 +2,7 @@
 
 This folder contains a YAML script that can be used to upload functions into your [Azure Functions](https://azure.microsoft.com/en-us/services/functions/) resource that you deployed in the previous step.
 
-![Microservices Architecture](Digital-Documentation-Shipping-Industry-Solution-Accelerator/References/architecture_function.jpg)
+![Microservices Architecture](References/architecture_function.jpg)
  
 ## Prerequisites
 Fundamental knowledge and access to [Azure Pipelines](https://azure.microsoft.com/en-us/services/devops/pipelines/)
