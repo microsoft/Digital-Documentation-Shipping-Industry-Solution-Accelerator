@@ -32,5 +32,7 @@ To run the [PowerShell script](./deploy.ps1):
 `./deploy.ps1`
 4. You will then be prompted to login.
 5. Log in to your Azure Subscription:
-    - Verify the resources have been created (Azure Function deployment will also create an App Service Plan and Storage).
-    - Copy the app name, host key and service endpoint in the Azure Functions
+    - Verify the resources have been created (Azure Function deployment will also create an [App Service Plan](https://azure.microsoft.com/en-us/pricing/details/app-service/plans/) and [Storage](https://azure.microsoft.com/en-us/services/storage/)).
+6. Copy the following Azure Functions parameters:
+    - Host Key (Function app settings > Host Key > master)
+    - Service Endpoint (URL)
