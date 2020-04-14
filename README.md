@@ -10,16 +10,16 @@ In order to successfully complete your solution, you will need to have access to
 1. Access to an Azure subscription
 2. Visual Studio 2017 or 2019
 3. AzureRM installed 
-
+4. Access to Azure Pipelines
 
 ## Azure and Blockchain
-The directions provided for this repository assume fundamental working knowledge of Azure, Cosmos DB, Azure Fuctions, Azure Blockchain Tokens, and Azure Blockchain Service.
+The directions provided for this repository assume fundamental working knowledge of Azure, Cosmos DB, Azure Fuctions, and Azure Blockchain Service.
 
 For additional training and support, please see:
  1. [Cosmos DB](https://docs.microsoft.com/en-us/azure/cosmos-db/introduction)
  2. [Functions](https://azure.microsoft.com/en-us/services/functions/) 
- 3. [Blockchain Tokens](https://azure.microsoft.com/en-us/services/blockchain-tokens/)
- 4. [Blockchain Service](https://azure.microsoft.com/en-us/services/blockchain-service/)
+ 3. [Blockchain Service](https://azure.microsoft.com/en-us/services/blockchain-service/)
+ 4. [Azure Pipelines](https://azure.microsoft.com/en-us/services/devops/pipelines/)
 
 ## Getting Started and Process Overview
 Clone/download this repo onto your computer and then walk through each of these folders in order, following the steps outlined in each of the README files.  After completion of all steps, you will have a working end-to-end solution with the following architecture:
@@ -33,12 +33,12 @@ The resources in this folder can be used to deploy the required resources into y
 After deployed, you will have a Cosmos DB account and database, Azure storage, and Kubernetes cluster deployed in your specified resource group.
 
 ### [01 - Source Code Deployment](./01_Source_Code_Deployment)
-This folder contains an Azure Pipeline, which add functions to your Azure Functions resource [source code pipeline](./01_Source_Code_Deployment/azure-pipelines.yml).
+This folder contains an YAML pipeline and source code. The [pipeline](./01_Source_Code_Deployment/azure-pipelines.yml) will deploy the source code to the Azure Functions resource.
 
 This pipeline will help you deploy the functions needed to handle the API calls from the quote and booking transaction.
 
 ### [02 - Application Deployment](./02_Application_Deployment)
-This folder contains the client application and token service for the solutiuon.
+This folder contains the documentation of how to run the source code solutiuon.
 
 
 ## License

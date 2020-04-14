@@ -1,4 +1,4 @@
-# Resource Deployment
+# Application Deployment
 
 This folder contains a PowerShell script that can be used to provision the Azure resources required to build your Blockchain solution.  You may skip this folder if you prefer to provision your Azure resources via the Azure Portal.  The PowerShell script will provision the following resources to your Azure subscription:
 
@@ -31,4 +31,6 @@ To run the [PowerShell script](./deploy.ps1):
 3. Run the [PowerShell script](./deploy.ps1). If you have PowerShell opened to this folder run the command:
 `./deploy.ps1`
 4. You will then be prompted to login.
-5. Log in to your Azure Subscription, verify the resources are there, copy the host key and service endpoint in the Azure Functions
+5. Log in to your Azure Subscription:
+    - Verify the resources have been created (Azure Function deployment will also create an App Service Plan and Storage).
+    - Copy the app name, host key and service endpoint in the Azure Functions
