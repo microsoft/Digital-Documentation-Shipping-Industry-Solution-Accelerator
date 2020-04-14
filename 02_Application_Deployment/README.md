@@ -2,25 +2,17 @@
 
 This folder contains documentation on how to run the Digital Documentation Shipping Industry Solution
 
-![Microservices Architecture](./References/architecture_function.jpg)
  
 ## Prerequisites
-Fundamental knowledge and access to [Azure Pipelines](https://azure.microsoft.com/en-us/services/devops/pipelines/)
+Fundamental knowledge and access to [Visual Studio](https://visualstudio.microsoft.com/)
 
 
-## Steps for Source Code Deployment via Azure Pipelines
+## Steps for adding Azure configuration to Client Application
 
-To run the [Pipeline](./azure-pipelines.yml):
+To run the [source code](../01_Source_Code_Deployment/src):
 
-1. Copy the [src](./01_Source_Code_Deployment/src) folder and [pipeline script](./01_Source_Code_Deployment/azure-pipelines.yml) into an [Azure DevOps](https://azure.microsoft.com/en-us/services/devops/) repository.
-2. Create a new pipeline and connect it to the repository.
-3. The page should now be opened to the pipeline, double click on the settings header the task 'AzureFunctionApp@1'
-4. In the right panel pop-up, fill-out the following fields:
-     -Azure subscription: <subscription ID>
-    - App type: Function App on Windows
-    - App name: <app name>
-    - Check the "Deploy to Slot or App Service Environment"
-    - Resourc Group: <resource group>
-    - Slot: Production
-5. Click "Add" at the bottom of the popout
-6. Click "Save and Run", create new branch for the commit, and run the pipeline.
+1. Clone/download the [source code](./01_Source_Code_Deployment/src) onto your desktop and open in Visual Studio
+2. Open the [ContosoCargo.DigitalDocument.TokenService.sln](../01_Source_Code_Deployment/src/ContosoCargo.DigitalDocument.TokenService.sln)
+3. Navigate to WindowsApp > ContosoCargo.DigitalDocument.Application.WindowsClient > App.config
+4. Replace HostKey and ServiceEndpoint with your Azure Functions values (ServiceEndpoint should be formated as "function URL**/api**")
+5. Save and run the Windows Client as your start up project.
