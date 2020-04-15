@@ -1,6 +1,7 @@
 # Source Code Deployment
 
-This folder contains a YAML script that can be used to upload functions into your [Azure Functions](https://azure.microsoft.com/en-us/services/functions/) resource that you deployed in the previous step.
+This folder contains a YAML script that can be used to upload functions into your [Azure Functions](https://azure.microsoft.com/en-us/services/functions/) resource that you deployed in the previous step. The diagram below shows how the source code we deploy will interact with the other Azure resources.
+
 
 ![Azure Function Architecture](../References/architecture_function.jpg)
  

@@ -1,19 +1,22 @@
 # Digital Documentation Shipping Industry Solution Accelerator Guide
 
 ## About this repository
-This accelerator was built to provide developers with all of the resources needed to quickly build an initial Digital Documentation for Shipping Quote system. Use this accelerator to jump start your development efforts with Blockchain in Azure.
+This accelerator was built to provide developers with all of the resources needed to quickly build an initial Digital Documentation Shipping Quote system. Use this accelerator to jump start your development efforts with Blockchain in Azure.
 
-This repository contains the steps, scripts, code, and tools to create a Blockchain application. 00_Resource_Deployment will create the necessary supporting resources in Azure (Functions, Blockchain Service, and Cosmos DB). 01_API_Host_Deployment will configure and deploy the client app as well as the functions to the Azure resource. Finally 02_Application_Deployment will deploy and host your application either locally or in your subscription.
+This repository contains the steps, scripts, code, and tools to create a Blockchain application.
+- 00_Resource_Deployment will create the necessary supporting resources in Azure (Functions, Blockchain Service, and Cosmos DB).
+- 01_API_Host_Deployment will configure and deploy the client app as well as the functions to the Azure resource.
+- 02_Application_Deployment will deploy and host your application either locally or in your subscription.
 
 ## Prerequisites
 In order to successfully complete your solution, you will need to have access to and or provisioned the following:
 1. Access to an Azure subscription
 2. Visual Studio 2017 or 2019
-3. AzureRM installed 
+3. AzureRm installed for PowerShell
 4. Access to Azure Pipelines
 
 ## Azure and Blockchain
-The directions provided for this repository assume fundamental working knowledge of Azure, Cosmos DB, Azure Fuctions, and Azure Blockchain Service.
+The directions provided for this repository assume fundamental working knowledge of Azure, Cosmos DB, Azure Fuctions, Azure Blockchain Service, and Azure Pipelines.
 
 For additional training and support, please see:
  1. [Cosmos DB](https://docs.microsoft.com/en-us/azure/cosmos-db/introduction)
@@ -30,15 +33,15 @@ Clone/download this repo onto your computer and then walk through each of these 
 ### [00 - Resource Deployment](./00_Resource_Deployment)
 The resources in this folder can be used to deploy the required resources into your Azure Subscription. This can be done either via the [Azure Portal](https://portal.azure.com) or by using the [PowerShell script](./00_Resource_Deployment/deploy.ps1) included in the resource deployment folder.
 
-After deployed, you will have a Cosmos DB account and database, Azure storage, and Kubernetes cluster deployed in your specified resource group.
+After deployed, you will have a Cosmos DB account, Azure Function (including an App Service Plan and Storage), and Blockchain Service deployed in your specified resource group.
 
 ### [01 - Source Code Deployment](./01_Source_Code_Deployment)
-This folder contains an YAML pipeline and source code. The [pipeline](./01_Source_Code_Deployment/azure-pipelines.yml) will deploy the source code to the Azure Functions resource.
+This folder contains a YAML pipeline and the source code. The [pipeline](./01_Source_Code_Deployment/azure-pipelines.yml) will deploy the source code to the Azure Functions resource.
 
-This pipeline will help you deploy the functions needed to handle the API calls from the quote and booking transaction.
+This pipeline will help you deploy the functions needed to handle the API calls for the quote and booking transactions.
 
 ### [02 - Application Deployment](./02_Application_Deployment)
-This folder contains the documentation of how to run the source code solutiuon.
+This folder contains the documentation of how to configure the solution to your provisioned Azure resources and how to use the application.
 
 
 ## License
