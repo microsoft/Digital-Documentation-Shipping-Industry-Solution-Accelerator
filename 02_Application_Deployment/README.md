@@ -14,8 +14,8 @@ To run the [source code](../01_Source_Code_Deployment/src):
 1. Clone/download the [source code](./01_Source_Code_Deployment/src) onto your computer and open the folder in Visual Studio.
 2. Open the [ContosoCargo.DigitalDocument.TokenService.sln](../01_Source_Code_Deployment/src/ContosoCargo.DigitalDocument.TokenService.sln).
 3. Navigate to WindowsApp > ContosoCargo.DigitalDocument.Application.WindowsClient > App.config.
-4. Replace HostKey and ServiceEndpoint with your Azure Functions values
-(don't forget **/api** on the end! e.g. _https://contosocargo.azurewebsites.net_**/api**)
+4. Replace HostKey and ServiceEndpoint with your Azure Functions values.
+     - Don't forget **/api** on the end! e.g. _https://contosocargo.azurewebsites.net/api_
 5. Save and run the Windows Client as your start up project.
 
 ## How to use the Application
