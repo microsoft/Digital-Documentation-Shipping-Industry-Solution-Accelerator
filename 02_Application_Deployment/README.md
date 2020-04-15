@@ -33,4 +33,5 @@ The first time Client App will open up to 'OOCL' as the Party and there should b
 ![Step 3](./Step_3.jpg)
 
 ### 4. The carrier will confirm the request:
+<<<<<<< HEAD
 ![Step 4](./Step_4.jpg)
