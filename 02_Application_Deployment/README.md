@@ -21,17 +21,16 @@ To run the [source code](../01_Source_Code_Deployment/src):
 
 The first time Client App will open up to 'OOCL' as the Party and there should be no quotes created yet. Once there are shipping quotes, the client should look like this:
 
-![Step 0](./Step_0.jpg)
+![Step 0](./Step_0.JPG)
 
 ### 1. Start with a shipper creating a quote request:
-![Step 1](./Step_1.jpg)
+![Step 1](./Step_1.JPG)
 
 ### 2. The carrier will repsond with a quotation:
-![Step 2](./Step_2.jpg)
+![Step 2](./Step_2.JPG)
 
 ### 3. The shipper will book the request:
-![Step 3](./Step_3.jpg)
+![Step 3](./Step_3.JPG)
 
 ### 4. The carrier will confirm the request:
-<<<<<<< HEAD
-![Step 4](./Step_4.jpg)
+![Step 4](./Step_4.JPG)
