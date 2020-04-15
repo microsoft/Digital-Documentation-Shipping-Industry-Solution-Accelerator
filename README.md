@@ -4,9 +4,9 @@
 This accelerator was built to provide developers with all of the resources needed to quickly build an initial Digital Documentation Shipping Quote system. Use this accelerator to jump start your development efforts with Blockchain in Azure.
 
 This repository contains the steps, scripts, code, and tools to create a Blockchain application.
-- 00_Resource_Deployment will create the necessary supporting resources in Azure (Functions, Blockchain Service, and Cosmos DB).
+- 00_Resource_Deployment will create the solution resources in Azure (Functions, Blockchain Service, and Cosmos DB).
 - 01_API_Host_Deployment will configure and deploy the client app as well as the functions to the Azure resource.
-- 02_Application_Deployment will deploy and host your application either locally or in your subscription.
+- 02_Application_Deployment will deploy and host your application your subscription.
 
 ## Prerequisites
 In order to successfully complete your solution, you will need to have access to and or provisioned the following:
