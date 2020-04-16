@@ -1,4 +1,4 @@
-# Application Deployment
+# Resource Deployment
 
 This folder contains a PowerShell script that can be used to provision the Azure resources required to build your Blockchain solution.  You may skip this folder if you prefer to provision your Azure resources via the Azure Portal.  The PowerShell script will provision the following resources to your Azure subscription:
 
@@ -9,7 +9,7 @@ This folder contains a PowerShell script that can be used to provision the Azure
 | [Azure Cosmos DB](https://azure.microsoft.com/en-us/services/cosmos-db/)  | Document for shipping transactions          |
 | *[Azure Functions](https://azure.microsoft.com/en-us/services/functions/)               | The API Host for shipping transactions                                                  |
 
-*When you deploy the Azure Function, you will also need to create an [App Service Plan](https://azure.microsoft.com/en-us/pricing/details/app-service/plans/) and [Azure Storage account](https://azure.microsoft.com/en-us/services/storage/) associated with you [Azure Functions](https://azure.microsoft.com/en-us/services/functions/).
+*When you deploy the Azure Function, you will also need to create an [App Service Plan](https://azure.microsoft.com/en-us/pricing/details/app-service/plans/) and [Azure Storage account](https://azure.microsoft.com/en-us/services/storage/) associated with you [Azure Functions](https://azure.microsoft.com/en-us/services/functions/). If you choose to use the PowerShell script, these resources will be deployed automatically.
 
 ## Prerequisites
 1. Access to an Azure Subscription
