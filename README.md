@@ -5,7 +5,7 @@ This accelerator was built to provide developers with all of the resources neede
 
 This repository contains the steps, scripts, code, and tools to create a Blockchain application.
 - 00_Resource_Deployment will create the solution resources in Azure (Functions, Blockchain Service, and Cosmos DB).
-- 01_API_Host_Deployment will configure and deploy the client app as well as the functions to the Azure resource.
+- 01_Source_Code_Deployment will configure and deploy the client app as well as the functions to the Azure resource.
 - 02_Application_Deployment will deploy and host your application your subscription.
 
 ## Prerequisites
@@ -19,9 +19,9 @@ In order to successfully complete your solution, you will need to have access to
 The directions provided for this repository assume fundamental working knowledge of Azure, Cosmos DB, Azure Fuctions, Azure Blockchain Service, and Azure Pipelines.
 
 For additional training and support, please see:
- 1. [Cosmos DB](https://docs.microsoft.com/en-us/azure/cosmos-db/introduction)
- 2. [Functions](https://azure.microsoft.com/en-us/services/functions/) 
- 3. [Blockchain Service](https://azure.microsoft.com/en-us/services/blockchain-service/)
+ 1. [Azure Cosmos DB](https://docs.microsoft.com/en-us/azure/cosmos-db/introduction)
+ 2. [Azure Functions](https://azure.microsoft.com/en-us/services/functions/) 
+ 3. [Azure Blockchain Service](https://azure.microsoft.com/en-us/services/blockchain-service/)
  4. [Azure Pipelines](https://azure.microsoft.com/en-us/services/devops/pipelines/)
 
 ## Getting Started and Process Overview
