@@ -13,7 +13,7 @@ This folder contains a PowerShell script that can be used to provision the Azure
 
 ## Prerequisites
 1. Access to an Azure Subscription
-2. AzureRM installed in PowerShell
+2. Azure CLI installed
 
 ## Deploy via Azure Portal
 As an alternative to running the PowerShell script, you can deploy the resources manually via the Azure Portal or click the button below to deploy the resources:

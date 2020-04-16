@@ -12,7 +12,7 @@ This repository contains the steps, scripts, code, and tools to create a Blockch
 In order to successfully complete your solution, you will need to have access to and or provisioned the following:
 1. Access to an Azure subscription
 2. Visual Studio 2017 or 2019
-3. AzureRm installed for PowerShell
+3. Azure CLI installed
 4. Access to Azure Pipelines
 
 ## Azure and Blockchain
