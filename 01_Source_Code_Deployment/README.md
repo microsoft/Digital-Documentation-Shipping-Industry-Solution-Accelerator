@@ -1,6 +1,6 @@
 # Source Code Deployment
 
-This folder contains a YAML script that can be used to upload functions into your [Azure Functions](https://azure.microsoft.com/en-us/services/functions/) resource that you deployed in the previous step. The diagram below shows how the source code we deploy will interact with the other Azure resources.
+This folder contains a YAML script that can be used to upload functions into your [Azure Functions](https://azure.microsoft.com/en-us/services/functions/) resource that you deployed in the previous step. The diagram below shows how the source code we deploy will interact with the other solution components.
 
 
 ![Azure Function Architecture](../References/architecture_function.jpg)
@@ -13,7 +13,7 @@ Fundamental knowledge and access to [Azure Pipelines](https://azure.microsoft.co
 
 To run the [Pipeline](./azure-pipelines.yml):
 
-1. Copy the [src](./01_Source_Code_Deployment/src) folder and [pipeline script](./01_Source_Code_Deployment/azure-pipelines.yml) into an [Azure DevOps](https://azure.microsoft.com/en-us/services/devops/) repository.
+1. Copy the [src](./src) folder and [pipeline script](./azure-pipelines.yml) into an [Azure DevOps](https://azure.microsoft.com/en-us/services/devops/) repository.
 2. Create a new pipeline and connect it to the repository.
 3. The page should now be opened to the pipeline, double click on the settings header the task 'AzureFunctionApp@1'
 4. In the right panel pop-up, fill-out the following fields:
