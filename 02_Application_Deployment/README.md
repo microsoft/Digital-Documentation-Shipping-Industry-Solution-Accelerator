@@ -20,18 +20,18 @@ To run the [source code](../01_Source_Code_Deployment/src):
 
 ## How to use the Application
 
-The first time Client App will open up to 'OOCL' as the Party and there should be no quotes created yet. Once there are shipping quotes, the client should look like this:
+The first time the Client App will open up to 'Contoso Cargo' as the Party and there should be no quotes created yet. Once there are shipping quotes, the client should look like this:
 
-![Step 0](./Step_0.JPG)
+![Step 0](./Step (0).JPG)
 
 ### 1. Start with a shipper creating a quote request:
-![Step 1](./Step_1.JPG)
+![Step 1](./Step (1).JPG)
 
 ### 2. The carrier will repsond with a quotation:
-![Step 2](./Step_2.JPG)
+![Step 2](./Step (2).JPG)
 
 ### 3. The shipper will book the request:
-![Step 3](./Step_3.JPG)
+![Step 3](./Step (3).JPG)
 
 ### 4. The carrier will confirm the request:
-![Step 4](./Step_4.JPG)
+![Step 4](./Step (4).JPG)
