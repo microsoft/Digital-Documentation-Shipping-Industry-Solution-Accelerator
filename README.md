@@ -14,6 +14,7 @@ In order to successfully complete your solution, you will need to have access to
 2. Visual Studio 2017 or 2019
 3. Azure CLI installed
 4. Access to Azure Pipelines
+5. (_for local deployment only_) Azure Storage Explorer
 
 ## Azure and Blockchain
 The directions provided for this repository assume fundamental working knowledge of Azure, Cosmos DB, Azure Fuctions, Azure Blockchain Service, and Azure Pipelines.

@@ -35,7 +35,6 @@ To run the [PowerShell script](./deploy.ps1):
 4. You will then be prompted to login.
 5. After the deployment is complete, log in to your Azure Subscription:
     - Verify the resources have been created.
-6. Copy the following resource parameters:
-    - Azure Functions Host Key (Function app settings > Host Key > master)
-    - Azure Functions Service Endpoint (URL)
-    - Cosmos DB Connection String
+6. Copy the following Azure Functions parameters:
+    - Host Key (Function app settings > Host Key > master)
+    - Service Endpoint (URL)
