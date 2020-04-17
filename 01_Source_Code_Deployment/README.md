@@ -7,7 +7,6 @@ This folder contains a YAML script that can be used to upload functions into you
  
 ## Prerequisites
 Fundamental knowledge and access to [Azure Pipelines](https://azure.microsoft.com/en-us/services/devops/pipelines/)
-If you choose to run the solution locally you will need access to [Azure Storage Emulator](https://docs.microsoft.com/en-us/azure/storage/common/storage-use-emulator) to host the source code
 
 
 ## Steps for Source Code Deployment via Azure Pipelines
@@ -26,5 +25,3 @@ To run the [Pipeline](./azure-pipelines.yml):
     - Slot: Production
 5. Click "Add" at the bottom of the popout
 6. Click "Save and Run", create new branch for the commit, and run the pipeline. Accept access to the subscription if it is requested.
-
-## Steps for Source Code Deployment Locally
