@@ -30,7 +30,7 @@ If you choose to run the Cosmos DB instance locally you will need to also have [
 2. Replace Offchain_Connectionstring with your emulator Cosmos DB connection string.
 3. Navigate to WindowsApp > ContosoCargo.DigitalDocument.Application.WindowsClient > App.config.
 4. Set the ServiceEndpoint to http://localhost:7071/api in App.config.
-5. Set the start up project as follows:
+5. Set the following as start up projects:
     - TokenService.Host should be set to "Start"
     - Application.WindowsClient should be set to "Start without debugging"
 
