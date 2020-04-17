@@ -18,7 +18,7 @@ This folder contains a PowerShell script that can be used to provision the Azure
 ## Deploy via Azure Portal
 As an alternative to running the PowerShell script, you can deploy the resources manually via the Azure Portal or click the button below to deploy the resources:
 
-<a href="https://azuredeploy.net/?repository=https:" target="_blank">
+<a href="https://azuredeploy.net/?repository=https://github.com/microsoft/Digital-Documentation-Shipping-Industry-Solution-Accelerator/00_Resource_Deployment" target="_blank">
     <img src="http://azuredeploy.net/deploybutton.png"/>
 </a> 
 
@@ -35,6 +35,7 @@ To run the [PowerShell script](./deploy.ps1):
 4. You will then be prompted to login.
 5. After the deployment is complete, log in to your Azure Subscription:
     - Verify the resources have been created.
-6. Copy the following Azure Functions parameters:
-    - Host Key (Function app settings > Host Key > master)
-    - Service Endpoint (URL)
+6. Copy the following resource parameters:
+    - Azure Functions Host Key (Function app settings > Host Key > master)
+    - Azure Functions Service Endpoint (URL)
+    - Cosmos DB Connection String

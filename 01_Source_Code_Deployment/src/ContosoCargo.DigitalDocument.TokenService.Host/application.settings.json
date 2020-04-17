@@ -4,7 +4,7 @@
     "TOKENAUDIENCE_URI": "spn:e6182fa1-0f55-40b5-86ad-20a919e842c0",
     "APPLICATIONID": "aeae2788-6f1b-4e2b-bae9-45e7fe76a723",
     "Domain": "f686d426-8d16-42db-81b7-ab578e110ccd",
-    "Offchain_Connectionstring": "mongodb://contosocargo:Khzpgx86Q4C9lq1f2Hum9hgK921ILJP6f8TmkxWMMrqElobasYnwVuwHTb25j7hTehpZhbhJ8ZYhekMaodO7xw==@contosocargo.mongo.cosmos.azure.com:10255/?ssl=true&replicaSet=globaldb&retrywrites=false&maxIdleTimeMS=120000&appName=@contosocargo@",
+    "Offchain_Connectionstring": "mongodb://contosounlimitedcmsxnozl:KKkuOdjpb6izHxFURAX4ZLRJDsCoQraSYS03iLG1OdCcUPIXmjD4TXqC3cj6giHmfYuCqJSCD6plCGDdrEfFtg==@contosounlimitedcmsxnozl.documents.azure.com:10255/?ssl=true&replicaSet=globaldb",
     "SECRET": "7y=ko=AZM@.JgBdfi2C7i2k8q3o=TtkC",
     "SERVICEENDPOINT": "https://echopreview.bcpe.azure-test.net",
     "ServiceURL": "https://munichfunction.azurewebsites.net/api/",
