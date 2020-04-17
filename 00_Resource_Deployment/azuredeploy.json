@@ -3,8 +3,7 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "cosmosAccountName": {
-            "type": "string",
-            "defaultValue": "contosocargocsms"
+            "type": "string"
         },
         "cosmosLocation": {
             "type": "string",
@@ -15,12 +14,10 @@
             "defaultValue": "Standard"
         },
         "bcMemberName": {
-            "type": "string",
-            "defaultValue": "contosoblockchain"
+            "type": "string"
         },
         "bcMemberPassword": {
             "type": "securestring",
-            "defaultValue": "bl0ckchainP@ssw0rd",
             "metadata": {
                 "description": "Password for the BlockChain Administrator. The password must password must have 3 of the following: 1 lower case character, 1 upper case character, 1 number, and 1 special character that is not '#', '`', '*', '\"', ''', '-', '%',' ' or ';'."
             }
@@ -31,7 +28,6 @@
         },
         "resourceName": {
             "type": "string",
-            "defaultValue": "contosocargo",
             "metadata": {
                 "description": "Use as a base-template to name the resources deployed in Azure."
             }
