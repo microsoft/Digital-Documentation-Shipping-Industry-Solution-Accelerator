@@ -6,18 +6,18 @@ This accelerator was built to provide developers with all of the resources neede
 This repository contains the steps, scripts, code, and tools to create a Blockchain application.
 - 00_Resource_Deployment will create the solution resources in Azure (Functions, Blockchain Service, and Cosmos DB).
 - 01_Source_Code_Deployment will configure and deploy the client app as well as the functions to the Azure resource.
-- 02_Application_Deployment will deploy and host your application your subscription.
+- 02_Application_Deployment will deploy and configure and run your solution.
 
 ## Prerequisites
-In order to successfully complete your solution, you will need to have access to and or provisioned the following:
+In order to successfully complete your solution, you will need to have access to or provisioned the following:
 1. Access to an Azure subscription
 2. Visual Studio 2017 or 2019
 3. Azure CLI installed
 4. Access to Azure Pipelines
-5. (_for local deployment only_) Azure Storage Explorer
+5. (_for local deployment only_) Azure Storage Explorer, Azure Functions Core Tools
 
 ## Azure and Blockchain
-The directions provided for this repository assume fundamental working knowledge of Azure, Cosmos DB, Azure Fuctions, Azure Blockchain Service, and Azure Pipelines.
+The directions provided in this repository assume fundamental working knowledge of Azure, Cosmos DB, Azure Fuctions, Azure Blockchain Service, and Azure Pipelines.
 
 For additional training and support, please see:
  1. [Azure Cosmos DB](https://docs.microsoft.com/en-us/azure/cosmos-db/introduction)
@@ -35,13 +35,6 @@ Clone/download this repo onto your computer and then walk through each of these 
 The resources in this folder can be used to deploy the required resources into your Azure Subscription. This can be done either via the [Azure Portal](https://portal.azure.com) or by using the [PowerShell script](./00_Resource_Deployment/deploy.ps1) included in the resource deployment folder.
 
 After deployed, you will have a Cosmos DB account, Azure Function (including an App Service Plan and Storage), and Blockchain Service deployed in your specified resource group.
-
-### Deploy via Azure Portal
-If you're satisfied with all the presets in [azuredeploy.json](./azuredeploy.jsosn), you can deploy the resources by clicking the button below:
-
-<a href="https://azuredeploy.net/?repository=https://github.com/microsoft/Digital-Documentation-Shipping-Industry-Solution-Accelerator/" alt="Deploy to Azure" target="_blank">
-    <img src="http://azuredeploy.net/deploybutton.png"/>
-</a> 
 
 ### [01 - Source Code Deployment](./01_Source_Code_Deployment)
 This folder contains a YAML pipeline and the source code. The [pipeline](./01_Source_Code_Deployment/azure-pipelines.yml) will deploy the source code to the Azure Functions resource.
