@@ -44,7 +44,7 @@ The first time the Client App will open up to 'Contoso Cargo' as the Party and t
 ### 1. Start with a shipper creating a quote request:
 ![Step 1](./Step_1.JPG)
 
-### 2. The carrier will repsond with a quotation:
+### 2. The carrier will respond with a quotation:
 ![Step 2](./Step_2.JPG)
 
 ### 3. The shipper will book the request:

@@ -1,6 +1,6 @@
 # Resource Deployment
 
-This folder contains a PowerShell script that can be used to provision the Azure resources required to build your Blockchain solution.  You may skip this folder if you prefer to provision your Azure resources via the Azure Portal or the 'Deploy to Azure' button in the root directory [README.MD](.).  The PowerShell script will provision the following resources to your Azure subscription:
+This folder contains a PowerShell script that can be used to provision the Azure resources required to build your Blockchain solution.  You may skip this folder if you prefer to provision your Azure resources via the Azure Portal.  The PowerShell script will provision the following resources to your Azure subscription:
 
  
 | Resource              | Usage                                                                                     |
