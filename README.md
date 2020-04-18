@@ -39,7 +39,7 @@ After deployed, you will have a Cosmos DB account, Azure Function (including an 
 ### Deploy via Azure Portal
 If you're satisfied with all the presets in [azuredeploy.json](./azuredeploy.jsosn), you can deploy the resources by clicking the button below:
 
-<a href="https://azuredeploy.net/?repository=https://github.com/microsoft/Digital-Documentation-Shipping-Industry-Solution-Accelerator/" alt="Deploy to Azure" target="_blank">
+<a href="https://azuredeploy.net/?repository=https://github.com/microsoft/Digital-Documentation-Shipping-Industry-Solution-Accelerator" target="_blank">
     <img src="http://azuredeploy.net/deploybutton.png"/>
 </a> 
 
