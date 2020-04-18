@@ -1,6 +1,6 @@
 # Resource Deployment
 
-This folder contains a PowerShell script that can be used to provision the Azure resources required to build your Blockchain solution.  You may skip this folder if you prefer to provision your Azure resources via the Azure Portal.  The PowerShell script will provision the following resources to your Azure subscription:
+This folder contains a PowerShell script that can be used to provision the Azure resources required to build your Blockchain solution.  You may skip this folder if you prefer to provision your Azure resources via the Azure Portal or the 'Deploy to Azure' button in the root directory [README.MD](.).  The PowerShell script will provision the following resources to your Azure subscription:
 
  
 | Resource              | Usage                                                                                     |
@@ -14,13 +14,6 @@ This folder contains a PowerShell script that can be used to provision the Azure
 ## Prerequisites
 1. Access to an Azure Subscription
 2. Azure CLI installed
-
-## Deploy via Azure Portal
-As an alternative to running the PowerShell script, you can deploy the resources manually via the Azure Portal or click the button below to deploy the resources:
-
-<a href="https://azuredeploy.net/?repository=https://github.com/microsoft/Digital-Documentation-Shipping-Industry-Solution-Accelerator/00_Resource_Deployment" target="_blank">
-    <img src="http://azuredeploy.net/deploybutton.png"/>
-</a> 
 
 ## Steps for Resource Deployment via PowerShell
 
