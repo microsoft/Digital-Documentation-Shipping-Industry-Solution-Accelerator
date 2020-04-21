@@ -18,7 +18,9 @@ This folder contains a PowerShell script that can be used to provision the Azure
 ## Deploy via Azure Portal
 Please refer to the [Azure Availability]() website to ensure the deployed resources are available in your selected locations.
 
-[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fgithub.com%2Fmicrosoft%2FDigital-Documentation-Shipping-Industry-Solution-Accelerator%2Fblob%2Fmaster%2F00_Resource_Deployment%2Fazuredeploy.json)
+<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fgithub.com%2Fmicrosoft%2FDigital-Documentation-Shipping-Industry-Solution-Accelerator%2Fblob%2Fmaster%2F00_Resource_Deployment%2Fazuredeploy.json" target="_blank">
+  <img src="https://aka.ms/deploytoazurebutton"/>
+</a>
 
 ## Steps for Resource Deployment via PowerShell
 
