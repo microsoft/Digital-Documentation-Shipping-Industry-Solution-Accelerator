@@ -1,0 +1,155 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "baseName": {
+            "type": "string"
+        },
+        "cosmosLocation": {
+            "type": "string"
+        },
+        "cosmosTier": {
+            "type": "string",
+            "defaultValue": "Standard"
+        },
+        "bcMemberPassword": {
+            "type": "securestring",
+            "metadata": {
+                "description": "Password for the BlockChain Administrator. The password must password must have 3 of the following: 1 lower case character, 1 upper case character, 1 number, and 1 special character that is not '#', '`', '*', '\"', ''', '-', '%',' ' or ';'."
+            }
+        },
+        "bcLocation": {
+            "type": "string"
+        },
+        "fxLocation": {
+            "type": "string"
+        }
+    },
+    "variables": {
+        "suffix": "[substring(toLower(uniqueString(resourceGroup().id, resourceGroup().location)),0,5)]",
+        "cosmosAccountName": "[tolower(concat(substring(parameters('baseName'), 0, min(length(parameters('baseName')),16)), 'cms', variables('suffix')))]",
+        "blockchainMemberName": "[tolower(concat(substring(parameters('baseName'), 0, min(length(parameters('baseName')),16)), 'bc', variables('suffix')))]",
+        "funcAppName": "[toLower(concat(parameters('baseName'), variables('suffix')))]",
+        "funcStorageName": "[tolower(concat(substring(parameters('baseName'), 0, min(length(parameters('baseName')),16)), 'stg', variables('suffix')))]",
+        "serverFarmName": "[concat(substring(parameters('baseName'), 0, min(length(parameters('baseName')),14)), '-srv-', variables('suffix'))]"
+
+    },
+    "resources": [
+        {
+            "type": "Microsoft.DocumentDB/databaseAccounts",
+            "apiVersion": "2016-03-31",
+            "name": "[variables('cosmosAccountName')]",
+            "location": "[parameters('cosmosLocation')]",
+            "properties": {
+                "locations": [
+                    {
+                        "locationName": "[parameters('cosmosLocation')]"
+                    }
+                ],
+                "databaseAccountOfferType": "[parameters('cosmosTier')]"
+            }
+        },
+        {
+            "type": "Microsoft.Blockchain/blockchainMembers",
+            "apiVersion": "2018-06-01-preview",
+            "name": "[variables('blockchainMemberName')]",
+            "location": "[parameters('bcLocation')]",
+            "tags": {
+                "consortium": "Consortium"
+            },
+            "sku": {
+                "name": "S0",
+                "tier": "Standard"
+            },
+            "properties": {
+                "protocol": "Quorum",
+                "consensus": "Default",
+                "password": "[parameters('bcMemberPassword')]",
+                "validatorNodesSku": {
+                    "capacity": 2
+                },
+                "consortium": "[concat('Consort', variables('blockchainMemberName'))]",
+                "consortiumManagementAccountPassword": "[parameters('bcMemberPassword')]",
+                "firewallRules": [
+                    {
+                        "ruleName": "AllowAll",
+                        "startIpAddress": "0.0.0.0",
+                        "endIpAddress": "255.255.255.255"
+                    }
+                ]
+            }
+        },
+        {
+            "type": "Microsoft.Storage/storageAccounts",
+            "apiVersion": "2018-07-01",
+            "name": "[variables('funcStorageName')]",
+            "location": "[parameters('fxLocation')]",
+            "sku": {
+                "name": "Standard_LRS"
+            },
+            "kind": "StorageV2"
+        },
+        {
+            "apiVersion": "2015-08-01",
+            "type": "Microsoft.Web/sites",
+            "name": "[variables('funcAppName')]",
+            "location": "[parameters('fxLocation')]",
+            "kind": "functionapp",
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/serverfarms',variables('serverFarmName'))]",
+                "[resourceId('Microsoft.Storage/storageAccounts',variables('funcStorageName'))]"
+            ],
+            "properties": {
+                "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', variables('serverFarmName'))]",
+                "siteConfig": {
+                    "appSettings": [
+                        {
+                            "name": "AzureWebJobsStorage",
+                            "value": "[concat('DefaultEndpointsProtocol=https;AccountName=',variables('funcStorageName'), ';AccountKey=', listKeys(variables('funcStorageName'),'2015-05-01-preview').key1)]"
+                        },
+                        {
+                            "name": "WEBSITE_CONTENTAZUREFILECONNECTIONSTRING",
+                            "value": "[concat('DefaultEndpointsProtocol=https;AccountName=',variables('funcStorageName'), ';AccountKey=', listKeys(variables('funcStorageName'),'2015-05-01-preview').key1)]"
+                        },
+                        {
+                            "name": "WEBSITE_CONTENTSHARE",
+                            "value": "[variables('funcAppName')]"
+                        },
+                        {
+                            "name": "FUNCTIONS_EXTENSION_VERSION",
+                            "value": "~3"
+                        },
+                        {
+                            "name": "FUNCTIONS_WORKER_RUNTIME",
+                            "value": "dotnet"
+                        },
+                        {
+                            "name": "WEBSITE_ENABLE_SYNC_UPDATE_SITE",
+                            "value": "true"
+                        },
+                        {
+                            "name": "WEBSITE_RUN_FROM_PACKAGE",
+                            "value": "1"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "type": "Microsoft.Web/serverfarms",
+            "apiVersion": "2018-02-01",
+            "name": "[variables('serverFarmName')]",
+            "location": "[parameters('fxLocation')]",
+            "sku": {
+                "name": "Y1",
+                "tier": "Dynamic"
+            },
+            "properties": {
+                "name": "[variables('serverFarmName')]",
+                "computeMode": "Dynamic"
+            }
+        }
+
+    ],
+    "outputs": {}
+}
