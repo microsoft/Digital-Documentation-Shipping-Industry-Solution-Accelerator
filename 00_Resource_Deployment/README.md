@@ -15,6 +15,11 @@ This folder contains a PowerShell script that can be used to provision the Azure
 1. Access to an Azure Subscription
 2. Azure CLI installed
 
+## Deploy via Azure Portal
+Please refer to the [Azure Availability]() website to ensure the deployed resources are available in your selected locations.
+
+[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://github.com/microsoft/Digital-Documentation-Shipping-Industry-Solution-Accelerator/blob/master/00_Resource_Deployment/azuredeploy.json)
+
 ## Steps for Resource Deployment via PowerShell
 
 To run the [PowerShell script](./deploy.ps1):
