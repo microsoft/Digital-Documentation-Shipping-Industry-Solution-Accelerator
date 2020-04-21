@@ -16,7 +16,7 @@ This folder contains a PowerShell script that can be used to provision the Azure
 2. Azure CLI installed
 
 ## Deploy via Azure Portal
-Please refer to the [Azure Availability]() website to ensure the deployed resources are available in your selected locations.
+Please refer to the [Azure Availability](https://azure.microsoft.com/en-us/global-infrastructure/services/?products=functions,blockchain-service,cosmos-db&regions=all) website to ensure the deployed resources are available in your selected locations.
 
 <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fgithub.com%2Fmicrosoft%2FDigital-Documentation-Shipping-Industry-Solution-Accelerator%2Fblob%2Fmaster%2F00_Resource_Deployment%2Fazuredeploy.json" target="_blank">
   <img src="https://aka.ms/deploytoazurebutton"/>
