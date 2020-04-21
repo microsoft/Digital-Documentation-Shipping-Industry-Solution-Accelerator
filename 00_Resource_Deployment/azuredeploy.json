@@ -3,26 +3,31 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "baseName": {
-            "type": "string"
+          "type": "string",
+          "defaultValue": "cargocontoso"
         },
         "cosmosLocation": {
-            "type": "string"
+          "type": "string",
+          "defaultValue": "West US 2"
         },
         "cosmosTier": {
             "type": "string",
             "defaultValue": "Standard"
         },
         "bcMemberPassword": {
-            "type": "securestring",
-            "metadata": {
-                "description": "Password for the BlockChain Administrator. The password must password must have 3 of the following: 1 lower case character, 1 upper case character, 1 number, and 1 special character that is not '#', '`', '*', '\"', ''', '-', '%',' ' or ';'."
-            }
+          "type": "securestring",
+          "defaultValue": "bl0ckch@in",
+          "metadata": {
+              "description": "Password for the BlockChain Administrator. The password must password must have 3 of the following: 1 lower case character, 1 upper case character, 1 number, and 1 special character that is not '#', '`', '*', '\"', ''', '-', '%',' ' or ';'."
+          }
         },
         "bcLocation": {
-            "type": "string"
+          "type": "string",
+          "defaultValue": "West US 2"
         },
         "fxLocation": {
-            "type": "string"
+          "type": "string",
+          "defaultValue": "Central US"
         }
     },
     "variables": {
