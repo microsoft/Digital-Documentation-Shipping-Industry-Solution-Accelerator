@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>91d5c17c-8020-4aeb-8dfc-0b099b63f39a</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.8" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.3.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Newtonsoft" Version="5.3.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="5.3.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Microsoft.TokenService.BlockchainNetworkManager\Microsoft.TokenService.BlockchainNetworkManager.csproj" />
+    <ProjectReference Include="..\Microsoft.TokenService.LedgerClient\Microsoft.TokenService.LedgerClient.csproj" />
+    <ProjectReference Include="..\Microsoft.TokenService.PartyManager\Microsoft.TokenService.PartyManager.csproj" />
+    <ProjectReference Include="..\Microsoft.TokenService.UserManager\Microsoft.TokenService.UserManager.csproj" />
+  </ItemGroup>
+
+
+</Project>

@@ -3,24 +3,18 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "resourceName": {
-            "type": "String",
-            "metadata": {
-                "description": "Use as a base-template to name the resources deployed in Azure."
-            }
+            "type": "String"
         },
         "cmsLocation": {
-            "type": "string"
+            "type": "String"
         }
     },
-    "variables": {
-        "suffix": "[substring(toLower(uniqueString(resourceGroup().id, resourceGroup().location)),0,5)]",
-        "cosmosAccountName": "[tolower(concat(substring(parameters('resourceName'), 0, min(length(parameters('resourceName')),16)), 'cms', variables('suffix')))]"
-    },
+    "variables": {},
     "resources": [
         {
             "type": "Microsoft.DocumentDB/databaseAccounts",
             "apiVersion": "2020-03-01",
-            "name": "[variables('cosmosAccountName')]",
+            "name": "[parameters('resourceName')]",
             "location": "[parameters('cmsLocation')]",
             "tags": {
                 "defaultExperience": "Azure Cosmos DB for MongoDB API",
@@ -54,6 +48,194 @@
                         "name": "EnableMongo"
                     }
                 ]
+            }
+        },
+        {
+            "type": "Microsoft.DocumentDB/databaseAccounts/mongodbDatabases",
+            "apiVersion": "2020-03-01",
+            "name": "[concat(parameters('resourceName'), '/CargoTokenRepository')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.DocumentDB/databaseAccounts', parameters('resourceName'))]"
+            ],
+            "properties": {
+                "resource": {
+                    "id": "CargoTokenRepository"
+                },
+                "options": {}
+            }
+        },
+        {
+            "type": "Microsoft.DocumentDB/databaseAccounts/mongodbDatabases",
+            "apiVersion": "2020-03-01",
+            "name": "[concat(parameters('resourceName'), '/Management')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.DocumentDB/databaseAccounts', parameters('resourceName'))]"
+            ],
+            "properties": {
+                "resource": {
+                    "id": "Management"
+                },
+                "options": {}
+            }
+        },
+        {
+            "type": "Microsoft.DocumentDB/databaseAccounts/mongodbDatabases/collections",
+            "apiVersion": "2020-03-01",
+            "name": "[concat(parameters('resourceName'), '/Management/blockchainnetwork')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.DocumentDB/databaseAccounts/mongodbDatabases', parameters('resourceName'), 'Management')]",
+                "[resourceId('Microsoft.DocumentDB/databaseAccounts', parameters('resourceName'))]"
+            ],
+            "properties": {
+                "resource": {
+                    "id": "blockchainnetwork",
+                    "indexes": [
+                        {
+                            "key": {
+                                "keys": [
+                                    "_id"
+                                ]
+                            },
+                            "options": {}
+                        }
+                    ]
+                },
+                "options": {}
+            }
+        },
+        {
+            "type": "Microsoft.DocumentDB/databaseAccounts/mongodbDatabases/collections",
+            "apiVersion": "2020-03-01",
+            "name": "[concat(parameters('resourceName'), '/CargoTokenRepository/cargotokenshipment')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.DocumentDB/databaseAccounts/mongodbDatabases', parameters('resourceName'), 'CargoTokenRepository')]",
+                "[resourceId('Microsoft.DocumentDB/databaseAccounts', parameters('resourceName'))]"
+            ],
+            "properties": {
+                "resource": {
+                    "id": "cargotokenshipment",
+                    "indexes": [
+                        {
+                            "key": {
+                                "keys": [
+                                    "_id"
+                                ]
+                            },
+                            "options": {}
+                        }
+                    ]
+                },
+                "options": {}
+            }
+        },
+        {
+            "type": "Microsoft.DocumentDB/databaseAccounts/mongodbDatabases/collections",
+            "apiVersion": "2020-03-01",
+            "name": "[concat(parameters('resourceName'), '/Management/party')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.DocumentDB/databaseAccounts/mongodbDatabases', parameters('resourceName'), 'Management')]",
+                "[resourceId('Microsoft.DocumentDB/databaseAccounts', parameters('resourceName'))]"
+            ],
+            "properties": {
+                "resource": {
+                    "id": "party",
+                    "indexes": [
+                        {
+                            "key": {
+                                "keys": [
+                                    "_id"
+                                ]
+                            },
+                            "options": {}
+                        }
+                    ]
+                },
+                "options": {}
+            }
+        },
+        {
+            "type": "Microsoft.DocumentDB/databaseAccounts/mongodbDatabases/collections",
+            "apiVersion": "2020-03-01",
+            "name": "[concat(parameters('resourceName'), '/Management/user')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.DocumentDB/databaseAccounts/mongodbDatabases', parameters('resourceName'), 'Management')]",
+                "[resourceId('Microsoft.DocumentDB/databaseAccounts', parameters('resourceName'))]"
+            ],
+            "properties": {
+                "resource": {
+                    "id": "user",
+                    "indexes": [
+                        {
+                            "key": {
+                                "keys": [
+                                    "_id"
+                                ]
+                            },
+                            "options": {}
+                        }
+                    ]
+                },
+                "options": {}
+            }
+        },
+        {
+            "type": "Microsoft.DocumentDB/databaseAccounts/mongodbDatabases/collections/throughputSettings",
+            "apiVersion": "2020-03-01",
+            "name": "[concat(parameters('resourceName'), '/CargoTokenRepository/cargotokenshipment/default')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.DocumentDB/databaseAccounts/mongodbDatabases/collections', parameters('resourceName'), 'CargoTokenRepository', 'cargotokenshipment')]",
+                "[resourceId('Microsoft.DocumentDB/databaseAccounts/mongodbDatabases', parameters('resourceName'), 'CargoTokenRepository')]",
+                "[resourceId('Microsoft.DocumentDB/databaseAccounts', parameters('resourceName'))]"
+            ],
+            "properties": {
+                "resource": {
+                    "throughput": 400
+                }
+            }
+        },
+        {
+            "type": "Microsoft.DocumentDB/databaseAccounts/mongodbDatabases/collections/throughputSettings",
+            "apiVersion": "2020-03-01",
+            "name": "[concat(parameters('resourceName'), '/Management/blockchainnetwork/default')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.DocumentDB/databaseAccounts/mongodbDatabases/collections', parameters('resourceName'), 'Management', 'blockchainnetwork')]",
+                "[resourceId('Microsoft.DocumentDB/databaseAccounts/mongodbDatabases', parameters('resourceName'), 'Management')]",
+                "[resourceId('Microsoft.DocumentDB/databaseAccounts', parameters('resourceName'))]"
+            ],
+            "properties": {
+                "resource": {
+                    "throughput": 400
+                }
+            }
+        },
+        {
+            "type": "Microsoft.DocumentDB/databaseAccounts/mongodbDatabases/collections/throughputSettings",
+            "apiVersion": "2020-03-01",
+            "name": "[concat(parameters('resourceName'), '/Management/party/default')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.DocumentDB/databaseAccounts/mongodbDatabases/collections', parameters('resourceName'), 'Management', 'party')]",
+                "[resourceId('Microsoft.DocumentDB/databaseAccounts/mongodbDatabases', parameters('resourceName'), 'Management')]",
+                "[resourceId('Microsoft.DocumentDB/databaseAccounts', parameters('resourceName'))]"
+            ],
+            "properties": {
+                "resource": {
+                    "throughput": 400
+                }
+            }
+        },
+        {
+            "type": "Microsoft.DocumentDB/databaseAccounts/mongodbDatabases/collections/throughputSettings",
+            "apiVersion": "2020-03-01",
+            "name": "[concat(parameters('resourceName'), '/Management/user/default')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.DocumentDB/databaseAccounts/mongodbDatabases/collections', parameters('resourceName'), 'Management', 'user')]",
+                "[resourceId('Microsoft.DocumentDB/databaseAccounts/mongodbDatabases', parameters('resourceName'), 'Management')]",
+                "[resourceId('Microsoft.DocumentDB/databaseAccounts', parameters('resourceName'))]"
+            ],
+            "properties": {
+                "resource": {
+                    "throughput": 400
+                }
             }
         }
     ]

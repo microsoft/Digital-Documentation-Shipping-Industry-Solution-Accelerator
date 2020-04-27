@@ -8,12 +8,15 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BusinessEntities", "BusinessEntities", "{92CAD9BB-62DA-460A-978F-244B7EDAD576}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{3929ECAE-0CEC-4906-BE5F-1D6DF2B3CAA9}"
+	ProjectSection(SolutionItems) = preProject
+		ContosoCargo.DigitalDocument.Application.WindowsClient\Entities\User.cs = ContosoCargo.DigitalDocument.Application.WindowsClient\Entities\User.cs
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WindowsApp", "WindowsApp", "{FAF71820-AC17-4A46-B6CE-E6391F97200D}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.Azure.TokenService", "Microsoft.Azure.TokenService\Microsoft.Azure.TokenService.csproj", "{3B39474B-7F65-4FFE-84C1-27779D77A6F1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.Azure.TokenService.Management", "Microsoft.Azure.TokenService.Management\Microsoft.Azure.TokenService.Management.csproj", "{75CD9090-68A8-4683-8F27-CF6992C8AA47}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContosoCargo.DigitalDocument.TokenService.OffChain.Mongo", "ContosoCargo.DigitalDocument.TokenService.OffChain.Mongo\ContosoCargo.DigitalDocument.TokenService.OffChain.Mongo.csproj", "{A8146432-162E-4A74-96F8-A1E6EEA464E9}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContosoCargo.DigitalDocument.TokenService.Models", "ContosoCargo.DigitalDocument.TokenService.Models\ContosoCargo.DigitalDocument.TokenService.Models.csproj", "{14BBF954-BC6C-43BE-94E0-7D7E15F1DE1E}"
 EndProject
@@ -22,8 +25,6 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContosoCargo.DigitalDocument.TokenService.Client", "ContosoCargo.DigitalDocument.TokenService.Client\ContosoCargo.DigitalDocument.TokenService.Client.csproj", "{2D3355D6-9CB0-49EB-ACA9-9A640055F170}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContosoCargo.DigitalDocument.TokenService.Host", "ContosoCargo.DigitalDocument.TokenService.Host\ContosoCargo.DigitalDocument.TokenService.Host.csproj", "{91AC5D6B-98F7-4BC7-BAA1-B019A7D35754}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContosoCargo.DigitalDocument.TokenService.OffChain.Mongo", "ContosoCargo.DigitalDocument.TokenService.OffChain.Mongo\ContosoCargo.DigitalDocument.TokenService.OffChain.Mongo.csproj", "{AA6B0C00-54C8-4E0B-BD70-43A09654C2D3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,14 +42,14 @@ Global
 		{3B39474B-7F65-4FFE-84C1-27779D77A6F1}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3B39474B-7F65-4FFE-84C1-27779D77A6F1}.Release|x64.ActiveCfg = Release|Any CPU
 		{3B39474B-7F65-4FFE-84C1-27779D77A6F1}.Release|x64.Build.0 = Release|Any CPU
-		{75CD9090-68A8-4683-8F27-CF6992C8AA47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{75CD9090-68A8-4683-8F27-CF6992C8AA47}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{75CD9090-68A8-4683-8F27-CF6992C8AA47}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{75CD9090-68A8-4683-8F27-CF6992C8AA47}.Debug|x64.Build.0 = Debug|Any CPU
-		{75CD9090-68A8-4683-8F27-CF6992C8AA47}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{75CD9090-68A8-4683-8F27-CF6992C8AA47}.Release|Any CPU.Build.0 = Release|Any CPU
-		{75CD9090-68A8-4683-8F27-CF6992C8AA47}.Release|x64.ActiveCfg = Release|Any CPU
-		{75CD9090-68A8-4683-8F27-CF6992C8AA47}.Release|x64.Build.0 = Release|Any CPU
+		{A8146432-162E-4A74-96F8-A1E6EEA464E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8146432-162E-4A74-96F8-A1E6EEA464E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8146432-162E-4A74-96F8-A1E6EEA464E9}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{A8146432-162E-4A74-96F8-A1E6EEA464E9}.Debug|x64.Build.0 = Debug|Any CPU
+		{A8146432-162E-4A74-96F8-A1E6EEA464E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8146432-162E-4A74-96F8-A1E6EEA464E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8146432-162E-4A74-96F8-A1E6EEA464E9}.Release|x64.ActiveCfg = Release|Any CPU
+		{A8146432-162E-4A74-96F8-A1E6EEA464E9}.Release|x64.Build.0 = Release|Any CPU
 		{14BBF954-BC6C-43BE-94E0-7D7E15F1DE1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{14BBF954-BC6C-43BE-94E0-7D7E15F1DE1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{14BBF954-BC6C-43BE-94E0-7D7E15F1DE1E}.Debug|x64.ActiveCfg = Debug|Any CPU
@@ -81,26 +82,17 @@ Global
 		{91AC5D6B-98F7-4BC7-BAA1-B019A7D35754}.Release|Any CPU.Build.0 = Release|Any CPU
 		{91AC5D6B-98F7-4BC7-BAA1-B019A7D35754}.Release|x64.ActiveCfg = Release|Any CPU
 		{91AC5D6B-98F7-4BC7-BAA1-B019A7D35754}.Release|x64.Build.0 = Release|Any CPU
-		{AA6B0C00-54C8-4E0B-BD70-43A09654C2D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AA6B0C00-54C8-4E0B-BD70-43A09654C2D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AA6B0C00-54C8-4E0B-BD70-43A09654C2D3}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{AA6B0C00-54C8-4E0B-BD70-43A09654C2D3}.Debug|x64.Build.0 = Debug|Any CPU
-		{AA6B0C00-54C8-4E0B-BD70-43A09654C2D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AA6B0C00-54C8-4E0B-BD70-43A09654C2D3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AA6B0C00-54C8-4E0B-BD70-43A09654C2D3}.Release|x64.ActiveCfg = Release|Any CPU
-		{AA6B0C00-54C8-4E0B-BD70-43A09654C2D3}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{3B39474B-7F65-4FFE-84C1-27779D77A6F1} = {3929ECAE-0CEC-4906-BE5F-1D6DF2B3CAA9}
-		{75CD9090-68A8-4683-8F27-CF6992C8AA47} = {3929ECAE-0CEC-4906-BE5F-1D6DF2B3CAA9}
+		{A8146432-162E-4A74-96F8-A1E6EEA464E9} = {3929ECAE-0CEC-4906-BE5F-1D6DF2B3CAA9}
 		{14BBF954-BC6C-43BE-94E0-7D7E15F1DE1E} = {92CAD9BB-62DA-460A-978F-244B7EDAD576}
 		{BDA70AC9-EBFB-4626-A3F5-697C03411E67} = {FAF71820-AC17-4A46-B6CE-E6391F97200D}
 		{2D3355D6-9CB0-49EB-ACA9-9A640055F170} = {3929ECAE-0CEC-4906-BE5F-1D6DF2B3CAA9}
 		{91AC5D6B-98F7-4BC7-BAA1-B019A7D35754} = {179D0A89-E3F4-4517-8DA2-BFE48810B93A}
-		{AA6B0C00-54C8-4E0B-BD70-43A09654C2D3} = {3929ECAE-0CEC-4906-BE5F-1D6DF2B3CAA9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9BFFE061-177F-4070-8553-FEDAD9CFCDDA}

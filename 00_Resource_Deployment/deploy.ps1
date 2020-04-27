@@ -1,7 +1,8 @@
 # These values need to be altered before deployment
-$subscriptionID= '<subscription ID>'
-$resourceGroupName = 'Digital_Shipping_Blockchain'
+ $subscriptionID = '<subscription ID>'
+$resourceGroupName = 'DigitShiptBlockchain'
 $resourceGroupLocation= 'CentralUS'
+$resourceName = 'digitalship'
 
 
 # These values can be used to override resource parameters specified in template.
@@ -25,26 +26,29 @@ az group create `
     --subscription $subscriptionID
 
 #create cosmos account
-az group deployment create `
+az deployment group create `
    --name "cmsdeployment"  `
    --resource-group $resourceGroupName `
    --template-file cosmosdeploy.json `
-   --parameters cosmosdeploy.parameters.json
+   --parameters cosmosdeploy.parameters.json `
+   --parameters resourceName=${resourceName}
 
 #create blockchain account
-az group deployment create `
+az deployment group create `
    --name "bcdeployment"  `
    --resource-group $resourceGroupName `
    --template-file blockchaindeploy.json `
-   --parameters blockchaindeploy.parameters.json
+   --parameters blockchaindeploy.parameters.json `
+   --parameters resourceName=${resourceName}
 
 #create function app with serivce plan and and storage account
 #location is the same as resource group
-az group deployment create `
+az deployment group create `
    --name "fxdeployment" `
    --resource-group $resourceGroupName `
    --template-file fxappdeploy.json `
-   --parameters fxappdeploy.parameters.json
+   --parameters fxappdeploy.parameters.json `
+   --parameters resourceName=${resourceName}
 
 
 

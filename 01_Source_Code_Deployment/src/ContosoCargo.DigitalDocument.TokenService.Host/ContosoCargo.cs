@@ -7,7 +7,6 @@ using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
-using Microsoft.Azure.TokenService;
 using ContosoCargo.DigitalDocument.TokenService.OffChain.Mongo.ModelBase;
 using System.Collections.Generic;
 using ContosoCargo.DigitalDocument.TokenService.Client;

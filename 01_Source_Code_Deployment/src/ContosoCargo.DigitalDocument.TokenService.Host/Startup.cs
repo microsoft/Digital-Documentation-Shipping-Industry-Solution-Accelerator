@@ -24,14 +24,14 @@ namespace ContosoCargo.DigitalDocument.TokenService.Host
 
         private IServiceCollection ConfigureServices(IServiceCollection services)
         {
-            var mongoConnString = Startup._config["Values:Offchain_Connectionstring"];
-            var groupName = Startup._config["Values:GroupName"];
+            var mongoConnString = Startup._config["App:Offchain_Connectionstring"];
+            
 
             services
                 .AddTransient<IContosoCargoApplication, Application.ContosoCargo>(c =>
                {
                    var repo = new BusinessTransactionRepository<CargoTokenShipment, Guid>(new MongoClient(mongoConnString), "CargoTokenRepository");
-                   return new Application.ContosoCargo(repo, groupName);
+                   return new Application.ContosoCargo(repo, Startup._config["App:EndpointURL"]);
                });
 
             return services;

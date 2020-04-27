@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Microsoft.TokenService.BlockchainNetworkManager\Microsoft.TokenService.BlockchainNetworkManager.csproj" />
+    <ProjectReference Include="..\Microsoft.TokenService.KeyManagement\Microsoft.TokenService.KeyManagement.csproj" />
+    <ProjectReference Include="..\Microsoft.TokenService.PartyManager\Microsoft.TokenService.PartyManager.csproj" />
+    <ProjectReference Include="..\Microsoft.TokenService.Storage.Mongo\Microsoft.TokenService.Storage.Mongo.csproj" />
+    <ProjectReference Include="..\Microsoft.TokenService.Storage\Microsoft.TokenService.Storage.csproj" />
+  </ItemGroup>
+
+</Project>

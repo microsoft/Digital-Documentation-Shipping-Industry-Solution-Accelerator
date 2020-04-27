@@ -1,22 +1,6 @@
 ﻿{
-  "Values": {
-    "AUTHENTICATION_ENDPOINT": "https://login.windows-ppe.net/",
-    "TOKENAUDIENCE_URI": "spn:e6182fa1-0f55-40b5-86ad-20a919e842c0",
-    "APPLICATIONID": "aeae2788-6f1b-4e2b-bae9-45e7fe76a723",
-    "Domain": "f686d426-8d16-42db-81b7-ab578e110ccd",
-    "Offchain_Connectionstring": "mongodb://contosounlimitedcmsxnozl:KKkuOdjpb6izHxFURAX4ZLRJDsCoQraSYS03iLG1OdCcUPIXmjD4TXqC3cj6giHmfYuCqJSCD6plCGDdrEfFtg==@contosounlimitedcmsxnozl.documents.azure.com:10255/?ssl=true&replicaSet=globaldb",
-    "SECRET": "7y=ko=AZM@.JgBdfi2C7i2k8q3o=TtkC",
-    "SERVICEENDPOINT": "https://echopreview.bcpe.azure-test.net",
-    "ServiceURL": "https://munichfunction.azurewebsites.net/api/",
-    "hostkey": "hzGaEOhm2a72WmO8gWaEKZNN/XAHYtCXsQ1Oa2lhwbOuWz20wadtzw==",
-    "GroupName": "Contoso"
-    //"ContosoCargo"
-    //"CreateTokenURL": "nonfungible/createToken",
-    //"DeleteTokenURL": "nonfungible/DeleteToken",
-    //"MintTokenURL": "nonfungible/mintToken",
-    //"GetTokenMetaDataURL" :  "nonfungible/getTokenMetaData"
-
-
-
+  "App": {
+    "EndpointURL": "http://13.86.34.204/",
+    "Offchain_Connectionstring": "mongodb://shippingdigitally:IvJuAuPNckaftFQR7Pmn39R7bpMw4Lsvw6GzLoufwiA8vcUTRdVS2TgovHieor9A8RwbWHro44hv0LiDPQdAbw==@shippingdigitally.mongo.cosmos.azure.com:10255/?ssl=true&replicaSet=globaldb&retrywrites=false&maxIdleTimeMS=120000&appName=@shippingdigitally@"
   }
 }

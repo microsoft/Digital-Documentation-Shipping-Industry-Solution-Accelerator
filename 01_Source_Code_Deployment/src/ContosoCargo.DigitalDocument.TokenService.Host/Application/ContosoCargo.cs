@@ -2,14 +2,12 @@
 using ContosoCargo.DigitalDocument.TokenService.OffChain.Mongo.ModelBase;
 using ContosoCargo.DigitalDocument.TokenService.Host.Messages;
 using ContosoCargo.DigitalDocument.TokenService.Client;
-using Microsoft.Azure.TokenService.Models;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
 using System.Threading.Tasks;
 using ContosoCargo.DigitalDocument.TokenService.Host.Application;
-using Microsoft.Azure.TokenService;
 using ContosoCargo.DigitalDocument.TokenService;
 
 namespace ContosoCargo.DigitalDocument.TokenService.Host.Application
@@ -18,14 +16,11 @@ namespace ContosoCargo.DigitalDocument.TokenService.Host.Application
     {
         private readonly IRepository<CargoTokenShipment, Guid> ContosoCargoIncidentRepository;
         private Client.TokenServiceWrapper TokenServiceClient;
-        private string GroupName;
 
-        public ContosoCargo(IRepository<CargoTokenShipment, Guid> CargoIncidentRepository, string ConsortiumGroupName)
+        public ContosoCargo(IRepository<CargoTokenShipment, Guid> CargoIncidentRepository, string serviceEndpoint)
         {
             ContosoCargoIncidentRepository = CargoIncidentRepository;
-            GroupName = ConsortiumGroupName;
-
-            TokenServiceClient = new Client.TokenServiceWrapper((new Client.TokenAPIService()).Initialize());
+            TokenServiceClient = new Client.TokenServiceWrapper(serviceEndpoint);
         }
 
 
@@ -37,22 +32,22 @@ namespace ContosoCargo.DigitalDocument.TokenService.Host.Application
             var CallerID = quoteRequest.CallerID;
             var TokenSymbol = $"CS-{Guid.NewGuid().ToString()}-{quoteRequest.CustomerID}";
 
-            AsyncResponse creationResponse = await TokenServiceClient.CreateToken(TokenName, TokenSymbol, CallerID, GroupName);
+            var creationResponse = await TokenServiceClient.CreateToken(TokenName, TokenSymbol, CallerID);
 
             //Mint Token
             var Minter = quoteRequest.CallerID;
             var Mintee = quoteRequest.CustomerID;
-            var TokenID = creationResponse.Id;
+            var TokenID = creationResponse.ContractAddress;
             var TokenSequence = 0;//define QuoteRequest TokenID will be 0
             var SerializedBusinessMetaData = JsonConvert.SerializeObject(quoteRequest.QuoteInfo);
 
-            AsyncResponse mintedResponse = await TokenServiceClient.MintToken(TokenID, Minter, Mintee, SerializedBusinessMetaData, TokenSequence, GroupName);
+            var mintedResponse = await TokenServiceClient.MintToken(TokenID, Minter, Mintee, SerializedBusinessMetaData, TokenSequence);
 
             CargoTokenShipment newToken = new CargoTokenShipment()
             {
                 TokenMetaInfo = new TokenMeta()
                 {
-                    TokenID = creationResponse.Id,
+                    TokenID = creationResponse.ContractAddress,
                     TokenName = TokenName,
                     TokenSymbol = TokenSymbol,
                     TokenTemplateID = "8465231b-4919-4498-b6e3-ae5975b7eab2",
@@ -60,7 +55,7 @@ namespace ContosoCargo.DigitalDocument.TokenService.Host.Application
                     TokenCreatedDate = DateTime.Now
                 },
                 CurrentStatus = ShipmentStage.OnQuoteRequest,
-                TokenId = creationResponse.Id,
+                TokenId = creationResponse.ContractAddress,
                 Contracter = Minter,
                 Contractee = Mintee,
                 QuoteRequestTokenInfo = new TokenMintedInfo()
@@ -70,7 +65,7 @@ namespace ContosoCargo.DigitalDocument.TokenService.Host.Application
                     TokenMintedDate = System.DateTime.Now,
                     TokenMintee = Mintee,
                     TokenMinter = Minter,
-                    TokenID = creationResponse.Id,
+                    TokenID = creationResponse.ContractAddress,
                     MintedTokenTitle = quoteRequest.QuoteTitle,
                     MintedTokenDescription = quoteRequest.QuoteDescription
                 }
@@ -96,7 +91,7 @@ namespace ContosoCargo.DigitalDocument.TokenService.Host.Application
             var TokenSequence = 1;//define Quote TokenID will be 1
             var SerializedBusinessMetaData = JsonConvert.SerializeObject(quoteRequest.QuoteInfo);
 
-            AsyncResponse mintedResponse = await TokenServiceClient.MintToken(TokenID, Minter, Mintee, SerializedBusinessMetaData, TokenSequence, GroupName);
+            var mintedResponse = await TokenServiceClient.MintToken(TokenID, Minter, Mintee, SerializedBusinessMetaData, TokenSequence);
 
             Shipment.QuotedTokenInfo = new TokenMintedInfo()
             {
@@ -149,16 +144,16 @@ namespace ContosoCargo.DigitalDocument.TokenService.Host.Application
             {
                 //required asyc process burn tokens as parallel.             
                 deleteTokenRequest.TokenSequence = 0;
-                await TokenServiceClient.DeleteToken(deleteTokenRequest.TokenID, deleteTokenRequest.CallerID, deleteTokenRequest.TokenSequence, GroupName);
+                await TokenServiceClient.DeleteToken(deleteTokenRequest.TokenID, deleteTokenRequest.CallerID, deleteTokenRequest.TokenSequence);
 
                 deleteTokenRequest.TokenSequence = 1;
-                await TokenServiceClient.DeleteToken(deleteTokenRequest.TokenID, deleteTokenRequest.CallerID, deleteTokenRequest.TokenSequence, GroupName);
+                await TokenServiceClient.DeleteToken(deleteTokenRequest.TokenID, deleteTokenRequest.CallerID, deleteTokenRequest.TokenSequence);
 
                 deleteTokenRequest.TokenSequence = 2;
-                await TokenServiceClient.DeleteToken(deleteTokenRequest.TokenID, deleteTokenRequest.CallerID, deleteTokenRequest.TokenSequence, GroupName);
+                await TokenServiceClient.DeleteToken(deleteTokenRequest.TokenID, deleteTokenRequest.CallerID, deleteTokenRequest.TokenSequence);
 
                 deleteTokenRequest.TokenSequence = 3;
-                await TokenServiceClient.DeleteToken(deleteTokenRequest.TokenID, deleteTokenRequest.CallerID, deleteTokenRequest.TokenSequence, GroupName);
+                await TokenServiceClient.DeleteToken(deleteTokenRequest.TokenID, deleteTokenRequest.CallerID, deleteTokenRequest.TokenSequence);
 
                 ContosoCargoIncidentRepository.Delete(id);
 
@@ -190,7 +185,7 @@ namespace ContosoCargo.DigitalDocument.TokenService.Host.Application
             var TokenSequence = 2; //BookingRequest sequence is "2"
             var SerializedBusinessMetaData = JsonConvert.SerializeObject(bookingRequest.BookingRequestInfo);//bookingRequest
 
-            AsyncResponse mintedResponse = await TokenServiceClient.MintToken(TokenID, Minter, Mintee, SerializedBusinessMetaData, TokenSequence, GroupName);
+            var mintedResponse = await TokenServiceClient.MintToken(TokenID, Minter, Mintee, SerializedBusinessMetaData, TokenSequence);
 
             //Adding Minted Token Info
             Shipment.BookingRequestTokenInfo = new TokenMintedInfo()
@@ -223,7 +218,7 @@ namespace ContosoCargo.DigitalDocument.TokenService.Host.Application
             var TokenSequence = 3;  //BookingRequest sequence is "2"
             var SerializedBusinessMetaData = JsonConvert.SerializeObject(bookingConfirmationRequest.BookingConfirmationInfo); //bookingRequest
 
-            AsyncResponse mintedResponse = await TokenServiceClient.MintToken(TokenID, Minter, Mintee, SerializedBusinessMetaData, TokenSequence, GroupName);
+            var mintedResponse = await TokenServiceClient.MintToken(TokenID, Minter, Mintee, SerializedBusinessMetaData, TokenSequence);
 
             //Adding Minted Token Info
             Shipment.BookedTokenInfo = new TokenMintedInfo()
@@ -258,8 +253,8 @@ namespace ContosoCargo.DigitalDocument.TokenService.Host.Application
                 TokenMintedInfo mintedTokenInfo = Shipment.QuoteRequestTokenInfo;
                 getTokenMetaDataRequest.TokenSequence = "0";
 
-                var result = await TokenServiceClient.GetTokenMetaData(getTokenMetaDataRequest.TokenID, getTokenMetaDataRequest.CallerID, 0, GroupName);
-                mintedTokenInfo.BusinessMetaData = result.Output;
+                var result = await TokenServiceClient.GetTokenMetaData(getTokenMetaDataRequest.TokenID, getTokenMetaDataRequest.CallerID, 0);
+                mintedTokenInfo.BusinessMetaData = result;
 
                 return mintedTokenInfo;
 
@@ -270,8 +265,8 @@ namespace ContosoCargo.DigitalDocument.TokenService.Host.Application
                 TokenMintedInfo mintedTokenInfo = Shipment.QuotedTokenInfo;
                 getTokenMetaDataRequest.TokenSequence = "1";
 
-                var result = await TokenServiceClient.GetTokenMetaData(getTokenMetaDataRequest.TokenID, getTokenMetaDataRequest.CallerID, 1, GroupName);
-                mintedTokenInfo.BusinessMetaData = result.Output;
+                var result = await TokenServiceClient.GetTokenMetaData(getTokenMetaDataRequest.TokenID, getTokenMetaDataRequest.CallerID, 1);
+                mintedTokenInfo.BusinessMetaData = result;
 
                 return mintedTokenInfo;
 
@@ -281,8 +276,8 @@ namespace ContosoCargo.DigitalDocument.TokenService.Host.Application
                 TokenMintedInfo mintedTokenInfo = Shipment.BookingRequestTokenInfo;
                 getTokenMetaDataRequest.TokenSequence = "2";
 
-                var result = await TokenServiceClient.GetTokenMetaData(getTokenMetaDataRequest.TokenID, getTokenMetaDataRequest.CallerID, 2, GroupName);
-                mintedTokenInfo.BusinessMetaData = result.Output;
+                var result = await TokenServiceClient.GetTokenMetaData(getTokenMetaDataRequest.TokenID, getTokenMetaDataRequest.CallerID, 2);
+                mintedTokenInfo.BusinessMetaData = result;
 
                 return mintedTokenInfo;
 
@@ -293,8 +288,8 @@ namespace ContosoCargo.DigitalDocument.TokenService.Host.Application
                 TokenMintedInfo mintedTokenInfo = Shipment.BookingRequestTokenInfo;
                 getTokenMetaDataRequest.TokenSequence = "3";
 
-                var result = await TokenServiceClient.GetTokenMetaData(getTokenMetaDataRequest.TokenID, getTokenMetaDataRequest.CallerID, 3, GroupName); ;
-                mintedTokenInfo.BusinessMetaData = result.Output;
+                var result = await TokenServiceClient.GetTokenMetaData(getTokenMetaDataRequest.TokenID, getTokenMetaDataRequest.CallerID, 3); ;
+                mintedTokenInfo.BusinessMetaData = result;
 
                 return mintedTokenInfo;
             }
