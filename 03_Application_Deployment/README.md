@@ -14,11 +14,10 @@ To run the [source code](../01_Source_Code_Deployment/src):
 1. Clone/download the [source code](../01_Source_Code_Deployment/src) onto your computer and open the folder in Visual Studio.
 2. Open the [ContosoCargo.DigitalDocument.TokenService.sln](../01_Source_Code_Deployment/src/ContosoCargo.DigitalDocument.TokenService.sln).
 3. Navigate to AzureFunctions > ContosoCargo.DigitalDocument.TokenService.Host > applications.settings.json.
-4. Replace Offchain_Connectionstring with your Cosmos DB connection string.
-5. Navigate to WindowsApp > ContosoCargo.DigitalDocument.Application.WindowsClient > App.config.
-6. Replace HostKey and ServiceEndpoint with your Azure Functions values.
+4. Navigate to WindowsApp > ContosoCargo.DigitalDocument.Application.WindowsClient > App.config.
+5. Replace HostKey and ServiceEndpoint with your Azure Functions values.
      - Don't forget **/api** on the end! (e.g. _https://contosocargo.azurewebsites.net/api_)
-7. Set the Application.WindowsClient as your start up project and run the solution.
+6. Set the Application.WindowsClient as your start up project and run the solution.
 
 
 ## How to run Client Application locally

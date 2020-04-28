@@ -1,6 +1,6 @@
 ﻿{
   "App": {
-    "EndpointURL": "http://13.86.34.204/",
+    "EndpointURL": "http://52.137.97.182/",
     "Offchain_Connectionstring": "mongodb://shippingdigitally:IvJuAuPNckaftFQR7Pmn39R7bpMw4Lsvw6GzLoufwiA8vcUTRdVS2TgovHieor9A8RwbWHro44hv0LiDPQdAbw==@shippingdigitally.mongo.cosmos.azure.com:10255/?ssl=true&replicaSet=globaldb&retrywrites=false&maxIdleTimeMS=120000&appName=@shippingdigitally@"
   }
 }
