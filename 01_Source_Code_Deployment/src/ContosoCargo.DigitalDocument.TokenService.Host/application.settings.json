@@ -1,6 +1,6 @@
 ﻿{
   "App": {
-    "EndpointURL": "http://52.137.97.182/",
-    "Offchain_Connectionstring": "mongodb://shippingdigitally:IvJuAuPNckaftFQR7Pmn39R7bpMw4Lsvw6GzLoufwiA8vcUTRdVS2TgovHieor9A8RwbWHro44hv0LiDPQdAbw==@shippingdigitally.mongo.cosmos.azure.com:10255/?ssl=true&replicaSet=globaldb&retrywrites=false&maxIdleTimeMS=120000&appName=@shippingdigitally@"
+    "EndpointURL": "http://52.191.216.60/",
+    "Offchain_Connectionstring": "mongodb://shippingcargocmslyshq:yU8ituJuGCADFPZ23LnqtU4mZDh7RMXV9yGaMXtMTWQWVYilQZUOo5hFJsGy3UKE0CQ2FgTWMiMBHJI7VaTq4Q==@shippingcargocmslyshq.mongo.cosmos.azure.com:10255/?ssl=true&replicaSet=globaldb&retrywrites=false&maxIdleTimeMS=120000&appName=@shippingcargocmslyshq@"
   }
 }

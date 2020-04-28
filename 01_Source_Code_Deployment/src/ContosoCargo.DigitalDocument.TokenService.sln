@@ -8,9 +8,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BusinessEntities", "BusinessEntities", "{92CAD9BB-62DA-460A-978F-244B7EDAD576}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{3929ECAE-0CEC-4906-BE5F-1D6DF2B3CAA9}"
-	ProjectSection(SolutionItems) = preProject
-		ContosoCargo.DigitalDocument.Application.WindowsClient\Entities\User.cs = ContosoCargo.DigitalDocument.Application.WindowsClient\Entities\User.cs
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WindowsApp", "WindowsApp", "{FAF71820-AC17-4A46-B6CE-E6391F97200D}"
 EndProject
@@ -25,6 +22,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContosoCargo.DigitalDocument.TokenService.Client", "ContosoCargo.DigitalDocument.TokenService.Client\ContosoCargo.DigitalDocument.TokenService.Client.csproj", "{2D3355D6-9CB0-49EB-ACA9-9A640055F170}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContosoCargo.DigitalDocument.TokenService.Host", "ContosoCargo.DigitalDocument.TokenService.Host\ContosoCargo.DigitalDocument.TokenService.Host.csproj", "{91AC5D6B-98F7-4BC7-BAA1-B019A7D35754}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContosoCargo.DigitalDocument.Setup", "ContosoCargo.DigitalDocument.Setup\ContosoCargo.DigitalDocument.Setup.csproj", "{FDFA662D-5C34-4E87-A324-3D32DB9FE34B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -82,6 +81,14 @@ Global
 		{91AC5D6B-98F7-4BC7-BAA1-B019A7D35754}.Release|Any CPU.Build.0 = Release|Any CPU
 		{91AC5D6B-98F7-4BC7-BAA1-B019A7D35754}.Release|x64.ActiveCfg = Release|Any CPU
 		{91AC5D6B-98F7-4BC7-BAA1-B019A7D35754}.Release|x64.Build.0 = Release|Any CPU
+		{FDFA662D-5C34-4E87-A324-3D32DB9FE34B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDFA662D-5C34-4E87-A324-3D32DB9FE34B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDFA662D-5C34-4E87-A324-3D32DB9FE34B}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{FDFA662D-5C34-4E87-A324-3D32DB9FE34B}.Debug|x64.Build.0 = Debug|Any CPU
+		{FDFA662D-5C34-4E87-A324-3D32DB9FE34B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDFA662D-5C34-4E87-A324-3D32DB9FE34B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDFA662D-5C34-4E87-A324-3D32DB9FE34B}.Release|x64.ActiveCfg = Release|Any CPU
+		{FDFA662D-5C34-4E87-A324-3D32DB9FE34B}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

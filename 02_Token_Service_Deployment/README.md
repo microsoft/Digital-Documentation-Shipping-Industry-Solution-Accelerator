@@ -58,12 +58,24 @@ You will need to create networks, parties, and users in order to run the applica
             - serviceendpoint: <--External IP-->
             - port: <--port-->
             - protocol: http
+     - [Set Up Project](../01_Source_Code_Deployment/src/ContosoCargo.DigitalDocument.Setup)
 
+#### Swagger/PostMan registration setup
 1. Register Blockchain Network (S:/ServiceManagement/BlockchainNetworks/BlockchainNetwork)(PM: RegisterBlockchainNetwork): name of your network, node URL, description if desired.
 2. Create a Party (S: /ServiceManagement/Parties/Party)(PM: CreateParty): party name, description.
 3. Create 3 users(S: /ServiceManagement/Users/User)(PM: CreateUser): user name, description, partyId (step 3), blockchainId (step 2).
     - For this is step, the Client Application has 3 users already added to the solution but they still need to be added to the Token Services: Contoso Cargo, Shipper A, Shipper B
-4. In the solution, update [Users.cs](../01_Source_Code_Deployment/src/ContosoCargo.DigitalDocument.Application.WindowsClient/Entities/Users.cs) with user IDs created in step 4.
+4. In the solution, update [Users.cs](../01_Source_Code_Deployment/src/ContosoCargo.DigitalDocument.Application.WindowsClient/Entities/Users.cs) with user IDs created in step 3.
+5. Update [CustomerNameConverter.cs](../01_Source_Code_Deployment/src/ContosoCargo.DigitalDocument.Application.WindowsClient/FieldConverter/CustomerNameConverter.cs) with the same user IDs.This class is used to display the user name in the client instead of the GUID.
+6. Update [application.settings.json](../01_Source_Code_Deployment/src/ContosoCargo.DigitalDocument.TokenService.Host/application.settings.json) with your External IP and your Cosmos DB connection string.
+
+#### Setup Project
+1. Navigate to [appsettings.json](../01_Source_Code_Deploymentsrc/ContosoCargo.DigitalDocument.Setup/appsettings.json) in your Setup Project
+2. Replace the following:
+    - TokenServiceEndpoint: <--External IP-->
+    - BlockchainNetworkTxNode: <--node URL-->
+3. Run Setup Project and copy the IDs when the project is finshed running.
+4. In the solution, update [Users.cs](../01_Source_Code_Deployment/src/ContosoCargo.DigitalDocument.Application.WindowsClient/Entities/Users.cs) with user IDs created in step 3.
 5. Update [CustomerNameConverter.cs](../01_Source_Code_Deployment/src/ContosoCargo.DigitalDocument.Application.WindowsClient/FieldConverter/CustomerNameConverter.cs) with the same user IDs.This class is used to display the user name in the client instead of the GUID.
 6. Update [application.settings.json](../01_Source_Code_Deployment/src/ContosoCargo.DigitalDocument.TokenService.Host/application.settings.json) with your External IP and your Cosmos DB connection string.
 

@@ -32,7 +32,7 @@ $password = $jsonCredentials.password
 $tenant = $jsonCredentials.tenant
 
 # Update Key Vault Policy to accept Service Principal request
-az keyvault set-policy -n contosocargokeyvault --spn $appId --key-permissions create decrypt delete import update encrypt get list unwrapKey wrapKey
+az keyvault set-policy -n $keyvaultname --spn $appId --key-permissions create decrypt delete import update encrypt get list unwrapKey wrapKey
 
 
  # Check access to Service Principal
