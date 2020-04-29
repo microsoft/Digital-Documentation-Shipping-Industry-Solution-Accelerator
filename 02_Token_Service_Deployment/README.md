@@ -42,23 +42,26 @@ To run the [Pipeline](./azure-pipelines.yml):
    - Offchain_Connectionstring: <--primary connection string for cosmos DB-->
    - KeyVaultURL: <--key vault URL-->
    - ClientID: <--appID--> ClientSecret: <--password-->*
-	*If you run the PowerShell script, the RBAC values are saved in an outpot (Credentials.txt).
 8. Run the pipeline and when it is finished, copy your service endpoint External IP and port:
     - Pipelines > Environments > (environment) > (k8s resource) > Services > abtoptionb > External IP & port
+
+*If you run the PowerShell script, the RBAC values are saved in an outpot (Credentials.txt).
 
 ## Register your Azure Blockchain Service and Users to your Token Service endpoint
 
 You will need to create networks, parties, and users in order to run the application. To make the necessary API calls you can use the following tools.
-    - Swagger
-        1. Open a browser
-        2. Type in the URL <--External IP-->/swagger)
-    - PostMan
-        1. From [documents](./documents), import the collections and environments files into [PostMan](https://www.postman.com/)
-        2. Next to the Environment label in the top right to select ProjectOptionB and click the eye to change the following values:
-            - serviceendpoint: <--External IP-->
-            - port: <--port-->
-            - protocol: http
-     - [Set Up Project](../01_Source_Code_Deployment/src/ContosoCargo.DigitalDocument.Setup)
+
+Swagger
+1. Open a browser
+2. Type in the URL <--External IP-->/swagger)
+
+PostMan
+1. From [documents](./documents), import the collections and environments files into [PostMan](https://www.postman.com/)
+2. Next to the Environment label in the top right to select ProjectOptionB and click the eye to change the following values:
+    - serviceendpoint: <--External IP-->
+    - port: <--port-->
+    - protocol: http
+    - [Set Up Project](../01_Source_Code_Deployment/src/ContosoCargo.DigitalDocument.Setup)
 
 #### Swagger/PostMan registration setup
 1. Register Blockchain Network: name of your network, node URL, description if desired
@@ -70,10 +73,11 @@ You will need to create networks, parties, and users in order to run the applica
 3. Create 3 users*: user name, description, partyId (step 2), blockchainId (step 1)
     - Swagger: /ServiceManagement/Users/User
     - PostMan: CreateUser
-	*For this is step, the Client Application has 3 users already added to the solution but they still need to be added to the Token Services: Contoso Cargo, Shipper A, Shipper B
 4. In the solution, update [Users.cs](../01_Source_Code_Deployment/src/ContosoCargo.DigitalDocument.Application.WindowsClient/Entities/Users.cs) with user IDs created in step 3.
 5. Update [CustomerNameConverter.cs](../01_Source_Code_Deployment/src/ContosoCargo.DigitalDocument.Application.WindowsClient/FieldConverter/CustomerNameConverter.cs) with the same user IDs.This class is used to display the user name in the client instead of the GUID.
 6. Update [application.settings.json](../01_Source_Code_Deployment/src/ContosoCargo.DigitalDocument.TokenService.Host/application.settings.json) with your External IP and your Cosmos DB connection string.
+
+*For this is step, the Client Application has 3 users already added to the solution but they still need to be added to the Token Services: Contoso Cargo, Shipper A, Shipper B
 
 #### Setup Project
 1. Navigate to [appsettings.json](../01_Source_Code_Deploymentsrc/ContosoCargo.DigitalDocument.Setup/appsettings.json) in your Setup Project
@@ -81,9 +85,7 @@ You will need to create networks, parties, and users in order to run the applica
     - TokenServiceEndpoint: <--External IP-->
     - BlockchainNetworkTxNode: <--node URL-->
 3. Run Setup Project and copy the IDs when the project is finshed running.
-4. In the solution, update [Users.cs](../01_Source_Code_Deployment/src/ContosoCargo.DigitalDocument.Application.WindowsClient/Entities/Users.cs) with user IDs created in step 3.
-5. Update [CustomerNameConverter.cs](../01_Source_Code_Deployment/src/ContosoCargo.DigitalDocument.Application.WindowsClient/FieldConverter/CustomerNameConverter.cs) with the same user IDs.This class is used to display the user name in the client instead of the GUID.
-6. Update [application.settings.json](../01_Source_Code_Deployment/src/ContosoCargo.DigitalDocument.TokenService.Host/application.settings.json) with your External IP and your Cosmos DB connection string.
+4. Repeat steps 4-6 in the Swagger/PostMan registration setup.
 
 ### Running your Token Service locally
 

@@ -23,5 +23,5 @@ To run the [Pipeline](./azure-pipelines.yml):
     - Check the "Deploy to Slot or App Service Environment"
     - Resource Group: <--resource group-->
     - Slot: Production
-5. Click "Add" at the bottom of the popout
+5. Click "Add" at the bottom of the popout.
 6. Click "Save and Run", create new branch for the commit, and run the pipeline. Accept access to the subscription if it is requested.

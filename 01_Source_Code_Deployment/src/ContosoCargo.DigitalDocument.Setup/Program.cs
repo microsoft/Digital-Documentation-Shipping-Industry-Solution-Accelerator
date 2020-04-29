@@ -30,7 +30,7 @@ namespace ContosoCargo.DigitalDocument.Setup
             Console.WriteLine("====> Done");
 
             Console.WriteLine("\nRegistering Shipper B account.....");
-            var shipperB = setup.SetupContosoUsers("Shipper B", party.Id, bcNetwork.Id).Result;
+            var shipperB = setup.SetupContosoUsers("Shiper B", party.Id, bcNetwork.Id).Result;
             Console.WriteLine("====> Done");
 
             Console.WriteLine("All Set process has been completed. " +

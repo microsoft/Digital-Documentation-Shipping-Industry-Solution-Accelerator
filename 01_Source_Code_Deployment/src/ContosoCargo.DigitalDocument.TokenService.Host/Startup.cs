@@ -24,6 +24,7 @@ namespace ContosoCargo.DigitalDocument.TokenService.Host
 
         private IServiceCollection ConfigureServices(IServiceCollection services)
         {
+
             var mongoConnString = Startup._config["App:Offchain_Connectionstring"];
             
 

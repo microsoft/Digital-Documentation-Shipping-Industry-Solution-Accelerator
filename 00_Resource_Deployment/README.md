@@ -9,11 +9,11 @@ This folder contains a PowerShell script that can be used to provision the Azure
 | [Azure Cosmos DB](https://azure.microsoft.com/en-us/services/cosmos-db/)  | Document for shipping transactions          |
 | *[Azure Functions](https://azure.microsoft.com/en-us/services/functions/)               | The API Host for shipping transactions                                                  |
 
-*When you deploy the Azure Function, you will also need to create an [App Service Plan](https://azure.microsoft.com/en-us/pricing/details/app-service/plans/) and [Azure Storage account](https://azure.microsoft.com/en-us/services/storage/) associated with you [Azure Functions](https://azure.microsoft.com/en-us/services/functions/). If you choose to use the PowerShell script, these resources will be deployed automatically.
+*When you deploy the Azure Function, you will also need to create an [App Service Plan](https://azure.microsoft.com/en-us/pricing/details/app-service/plans/) and [Azure Storage account](https://azure.microsoft.com/en-us/services/storage/) associated with your [Azure Functions](https://azure.microsoft.com/en-us/services/functions/). If you choose to use the PowerShell script, these resources will be deployed automatically.
 
 ## Prerequisites
 1. Access to an Azure Subscription
-2. Azure CLI installed
+2. Azure CLI installed if you decide to use the [PowerShell script](./deploy.ps1)
 
 ## Deploy via Azure Portal
 Please refer to the [Azure Availability](https://azure.microsoft.com/en-us/global-infrastructure/services/?products=functions,blockchain-service,cosmos-db&regions=all) website to ensure the deployed resources are available in your selected locations.
