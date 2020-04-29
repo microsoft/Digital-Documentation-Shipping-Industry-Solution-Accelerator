@@ -32,8 +32,10 @@ $password = $jsonCredentials.password
 $tenant = $jsonCredentials.tenant
 
 # Update Key Vault Policy to accept Service Principal request
-az keyvault set-policy -n $keyvaultname --spn $appId --key-permissions create decrypt delete import update encrypt get list unwrapKey wrapKey
-
+az keyvault set-policy --name $keyvaultname --spn $appId `
+    --certificate-permissions backup create delete deleteissuers get getissuers import list listissuers managecontacts manageissuers purge recover restore setissuers update `
+    --key-permission backup create decrypt delete encrypt get import list purge recover restore sign unwrapKey update verify wrapKey `
+    --secret-permissions backup delete get list purge recover restore set
 
  # Check access to Service Principal
 az login --service-principal -u $appId --password $password --tenant $tenant
