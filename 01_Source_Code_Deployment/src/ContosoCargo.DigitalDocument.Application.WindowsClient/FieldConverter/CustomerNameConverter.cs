@@ -14,11 +14,11 @@ namespace CargoSmart.Windows.Booking.FieldConverter
         {
             switch (value)
             {
-                case "0267c462-f629-45a5-b140-df50c6b219bd":
+                case "832a88be-6087-4127-8b8f-515a0704e973":
                     return "Contoso Cargo";
-                case "c466d31d-f669-4d99-9e02-551ef8284c11":
+                case "cb98ab5a-3c2c-451f-9cc8-54f02c2ebfb2":
                     return "Shipper A";
-                case "03502024-a6ae-4c8c-b87a-56da9c262a77":
+                case "95ebd855-b54b-4f1a-99ac-5934a71f1440":
                     return "Shipper B";
                 default:
                     return "";
@@ -30,11 +30,11 @@ namespace CargoSmart.Windows.Booking.FieldConverter
             switch (value)
             {
                 case "Contoso Cargo":
-                    return "0267c462-f629-45a5-b140-df50c6b219bd";
+                    return "832a88be-6087-4127-8b8f-515a0704e973";
                 case "Shipper A":
-                    return "c466d31d-f669-4d99-9e02-551ef8284c11";
+                    return "cb98ab5a-3c2c-451f-9cc8-54f02c2ebfb2";
                 case "Shipper B":
-                    return "03502024-a6ae-4c8c-b87a-56da9c262a77";
+                    return "95ebd855-b54b-4f1a-99ac-5934a71f1440";
                 default:
                     return "";
             }

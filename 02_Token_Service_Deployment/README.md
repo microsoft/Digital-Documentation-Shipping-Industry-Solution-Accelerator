@@ -11,7 +11,7 @@ Fundamental knowledge of the following Azure resources*:
 [Service Principals](https://docs.microsoft.com/en-us/azure/active-directory/develop/app-objects-and-service-principals)
 [Azure Key Vault](https://azure.microsoft.com/en-us/services/key-vault/)
 
-*These resources should be deployed before you start and in the same group as the resources deployed in (../00_Resource_Deployment)
+*These resources should be deployed before you start and in the same group as the resources deployed in [00_Resource_Deployment](../00_Resource_Deployment)
 
 For **quick** and **easy** deployment, feel free to use the [PowerShell script](./tokenserviceresources.ps1) in this folder and make sure the $resourceGroupName matches your other resources.
 
@@ -42,7 +42,7 @@ To run the [Pipeline](./azure-pipelines.yml):
     - Offchain_Connectionstring: <--primary connection string for cosmos DB-->
     - KeyVaultURL: <--key vault URL-->
     - ClientID: <--appID--> ClientSecret: <--password-->*
-    *If you run the PowerShell script, the RBAC values are saved in an outpot (Credentials.txt).
+*If you run the PowerShell script, the RBAC values are saved in an outpot (Credentials.txt).
 8. Run the pipeline and when it is finished, copy your service endpoint External IP and port:
     - Pipelines > Environments > (environment) > (k8s resource) > Services > abtoptionb > External IP & port
 
@@ -61,10 +61,16 @@ You will need to create networks, parties, and users in order to run the applica
      - [Set Up Project](../01_Source_Code_Deployment/src/ContosoCargo.DigitalDocument.Setup)
 
 #### Swagger/PostMan registration setup
-1. Register Blockchain Network (S:/ServiceManagement/BlockchainNetworks/BlockchainNetwork)(PM: RegisterBlockchainNetwork): name of your network, node URL, description if desired.
-2. Create a Party (S: /ServiceManagement/Parties/Party)(PM: CreateParty): party name, description.
-3. Create 3 users(S: /ServiceManagement/Users/User)(PM: CreateUser): user name, description, partyId (step 3), blockchainId (step 2).
-    - For this is step, the Client Application has 3 users already added to the solution but they still need to be added to the Token Services: Contoso Cargo, Shipper A, Shipper B
+1. Register Blockchain Network: name of your network, node URL, description if desired
+	- Swagger:/ServiceManagement/BlockchainNetworks/BlockchainNetwork
+	- PostMan: RegisterBlockchainNetwork
+2. Create a Party: party name, description
+	- Swagger: /ServiceManagement/Parties/Party
+	- PostMan: CreateParty
+3. Create 3 users*: user name, description, partyId (step 2), blockchainId (step 1)
+	- Swagger: /ServiceManagement/Users/User
+	- PostMan: CreateUser
+*For this is step, the Client Application has 3 users already added to the solution but they still need to be added to the Token Services: Contoso Cargo, Shipper A, Shipper B
 4. In the solution, update [Users.cs](../01_Source_Code_Deployment/src/ContosoCargo.DigitalDocument.Application.WindowsClient/Entities/Users.cs) with user IDs created in step 3.
 5. Update [CustomerNameConverter.cs](../01_Source_Code_Deployment/src/ContosoCargo.DigitalDocument.Application.WindowsClient/FieldConverter/CustomerNameConverter.cs) with the same user IDs.This class is used to display the user name in the client instead of the GUID.
 6. Update [application.settings.json](../01_Source_Code_Deployment/src/ContosoCargo.DigitalDocument.TokenService.Host/application.settings.json) with your External IP and your Cosmos DB connection string.

@@ -15,9 +15,9 @@ namespace CargoSmart.Windows.Booking.Entities
         public static List<User> GetUserAccounts()
         {
             List<User> users = new List<User>();
-            users.Add(new User() { UserName = "Contoso Cargo", Address = "0267c462-f629-45a5-b140-df50c6b219bd", Role = Role.Carrier });
-            users.Add(new User() { UserName = "Shipper A", Address = "c466d31d-f669-4d99-9e02-551ef8284c11", Role = Role.Shipper });
-            users.Add(new User() { UserName = "Shipper B", Address = "03502024-a6ae-4c8c-b87a-56da9c262a77", Role = Role.Shipper });
+            users.Add(new User() { UserName = "Contoso Cargo", Address = "832a88be-6087-4127-8b8f-515a0704e973", Role = Role.Carrier });
+            users.Add(new User() { UserName = "Shipper A", Address = "cb98ab5a-3c2c-451f-9cc8-54f02c2ebfb2", Role = Role.Shipper });
+            users.Add(new User() { UserName = "Shipper B", Address = "95ebd855-b54b-4f1a-99ac-5934a71f1440", Role = Role.Shipper });
 
             return users;
         }
