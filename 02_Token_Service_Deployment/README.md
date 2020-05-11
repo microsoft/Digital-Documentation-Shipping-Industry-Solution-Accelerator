@@ -49,19 +49,20 @@ To run the [Pipeline](./azure-pipelines.yml):
 
 ## Register your Azure Blockchain Service and Users to your Token Service endpoint
 
-You will need to create networks, parties, and users in order to run the application. To make the necessary API calls you can use the following tools.
+You will need to create networks, parties, and users in order to run the application. There are 3 ways to make the necessary API calls:
 
-Swagger
+**Use Swagger**
 1. Open a browser
 2. Type in the URL <--External IP-->/swagger)
 
-PostMan
+**Use PostMan**
 1. From [documents](./documents), import the collections and environments files into [PostMan](https://www.postman.com/)
 2. Next to the Environment label in the top right to select ProjectOptionB and click the eye to change the following values:
     - serviceendpoint: <--External IP-->
     - port: <--port-->
     - protocol: http
-    - [Set Up Project](../01_Source_Code_Deployment/src/ContosoCargo.DigitalDocument.Setup)
+ 
+**Use the [Set Up Project](../01_Source_Code_Deployment/src/ContosoCargo.DigitalDocument.Setup)**
 
 #### Swagger/PostMan registration setup
 1. Register Blockchain Network: name of your network, node URL, description if desired
