@@ -83,8 +83,8 @@ For additional training and support, please see:
 
     - Resources can also be deployed into your Azure Subscription by using one of these Deploy Azure links:  
 
-        [![Deploy to Azure](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.svg?sanitize=true)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmicrosoft%2FDDSI-SA-Dev%2Fmain%2Fdeployments%2FARMTemplates%2FJson%2Fmain.json%3Ftoken%3DGHSAT0AAAAAABQNU3BZSIJE5L2NH6NYOYAEYQOBT5Q)&emsp;&emsp;&emsp;
-        [![Deploy To Azure US Gov](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazuregov.svg?sanitize=true)](https://portal.azure.us/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmicrosoft%2FDDSI-SA-Dev%2Fmain%2Fdeployments%2FARMTemplates%2FJson%2Fmain.json%3Ftoken%3DGHSAT0AAAAAABQNU3BZSIJE5L2NH6NYOYAEYQOBT5Q)&emsp;&emsp;&emsp;
+        [![Deploy to Azure](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.svg?sanitize=true)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmicrosoft%2FDigital-Documentation-Shipping-Industry-Solution-Accelerator%2Fmaster%2Fdeployments%2FARMTemplates%2FJson%2Fmain.json)&emsp;&emsp;&emsp;
+        [![Deploy To Azure US Gov](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazuregov.svg?sanitize=true)](https://portal.azure.us/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmicrosoft%2FDigital-Documentation-Shipping-Industry-Solution-Accelerator%2Fmaster%2Fdeployments%2FARMTemplates%2FJson%2Fmain.json)&emsp;&emsp;&emsp;
 
         **Note: Follow "Step 3" in [Azure Resources Deployment](./deployments/ARMTemplates/README.md#step-3-configure-and-assign-managed-identity) to configure managed identity permission if you have deployed resources using above Azure links.**
 
