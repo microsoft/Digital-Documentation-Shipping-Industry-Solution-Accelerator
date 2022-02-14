@@ -1,6 +1,0 @@
-﻿{
-  "App": {
-    "EndpointURL": "<<UPDATE EXTERNAL IP>>",
-    "Offchain_Connectionstring": "<UPDATE COSMOS CONNECTION STRING>>"
-  }
-}
