@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="Microsoft.Solutions.NFT">
+      <HintPath>..\TokenServiceSDK\Microsoft.Solutions.NFT.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

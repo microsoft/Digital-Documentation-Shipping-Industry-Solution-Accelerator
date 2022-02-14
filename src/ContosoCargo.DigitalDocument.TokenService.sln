@@ -1,0 +1,96 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.31911.260
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AzureFunction", "AzureFunction", "{179D0A89-E3F4-4517-8DA2-BFE48810B93A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BusinessEntities", "BusinessEntities", "{92CAD9BB-62DA-460A-978F-244B7EDAD576}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{3929ECAE-0CEC-4906-BE5F-1D6DF2B3CAA9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WindowsApp", "WindowsApp", "{FAF71820-AC17-4A46-B6CE-E6391F97200D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContosoCargo.DigitalDocument.TokenService.OffChain.Mongo", "ContosoCargo.DigitalDocument.TokenService.OffChain.Mongo\ContosoCargo.DigitalDocument.TokenService.OffChain.Mongo.csproj", "{A8146432-162E-4A74-96F8-A1E6EEA464E9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContosoCargo.DigitalDocument.TokenService.Models", "ContosoCargo.DigitalDocument.TokenService.Models\ContosoCargo.DigitalDocument.TokenService.Models.csproj", "{14BBF954-BC6C-43BE-94E0-7D7E15F1DE1E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContosoCargo.DigitalDocument.Application.WindowsClient", "ContosoCargo.DigitalDocument.Application.WindowsClient\ContosoCargo.DigitalDocument.Application.WindowsClient.csproj", "{BDA70AC9-EBFB-4626-A3F5-697C03411E67}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContosoCargo.DigitalDocument.TokenService.Client", "ContosoCargo.DigitalDocument.TokenService.Client\ContosoCargo.DigitalDocument.TokenService.Client.csproj", "{2D3355D6-9CB0-49EB-ACA9-9A640055F170}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContosoCargo.DigitalDocument.Setup", "ContosoCargo.DigitalDocument.Setup\ContosoCargo.DigitalDocument.Setup.csproj", "{FDFA662D-5C34-4E87-A324-3D32DB9FE34B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContosoCargo.DigitalDocument.TokenService.Host", "ContosoCargo.DigitalDocument.TokenService.Host\ContosoCargo.DigitalDocument.TokenService.Host.csproj", "{3F961C54-4326-4936-A034-434D85F55337}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A8146432-162E-4A74-96F8-A1E6EEA464E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8146432-162E-4A74-96F8-A1E6EEA464E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8146432-162E-4A74-96F8-A1E6EEA464E9}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{A8146432-162E-4A74-96F8-A1E6EEA464E9}.Debug|x64.Build.0 = Debug|Any CPU
+		{A8146432-162E-4A74-96F8-A1E6EEA464E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8146432-162E-4A74-96F8-A1E6EEA464E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8146432-162E-4A74-96F8-A1E6EEA464E9}.Release|x64.ActiveCfg = Release|Any CPU
+		{A8146432-162E-4A74-96F8-A1E6EEA464E9}.Release|x64.Build.0 = Release|Any CPU
+		{14BBF954-BC6C-43BE-94E0-7D7E15F1DE1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14BBF954-BC6C-43BE-94E0-7D7E15F1DE1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14BBF954-BC6C-43BE-94E0-7D7E15F1DE1E}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{14BBF954-BC6C-43BE-94E0-7D7E15F1DE1E}.Debug|x64.Build.0 = Debug|Any CPU
+		{14BBF954-BC6C-43BE-94E0-7D7E15F1DE1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14BBF954-BC6C-43BE-94E0-7D7E15F1DE1E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14BBF954-BC6C-43BE-94E0-7D7E15F1DE1E}.Release|x64.ActiveCfg = Release|Any CPU
+		{14BBF954-BC6C-43BE-94E0-7D7E15F1DE1E}.Release|x64.Build.0 = Release|Any CPU
+		{BDA70AC9-EBFB-4626-A3F5-697C03411E67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDA70AC9-EBFB-4626-A3F5-697C03411E67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDA70AC9-EBFB-4626-A3F5-697C03411E67}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{BDA70AC9-EBFB-4626-A3F5-697C03411E67}.Debug|x64.Build.0 = Debug|Any CPU
+		{BDA70AC9-EBFB-4626-A3F5-697C03411E67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDA70AC9-EBFB-4626-A3F5-697C03411E67}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDA70AC9-EBFB-4626-A3F5-697C03411E67}.Release|x64.ActiveCfg = Release|Any CPU
+		{BDA70AC9-EBFB-4626-A3F5-697C03411E67}.Release|x64.Build.0 = Release|Any CPU
+		{2D3355D6-9CB0-49EB-ACA9-9A640055F170}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D3355D6-9CB0-49EB-ACA9-9A640055F170}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D3355D6-9CB0-49EB-ACA9-9A640055F170}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{2D3355D6-9CB0-49EB-ACA9-9A640055F170}.Debug|x64.Build.0 = Debug|Any CPU
+		{2D3355D6-9CB0-49EB-ACA9-9A640055F170}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D3355D6-9CB0-49EB-ACA9-9A640055F170}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D3355D6-9CB0-49EB-ACA9-9A640055F170}.Release|x64.ActiveCfg = Release|Any CPU
+		{2D3355D6-9CB0-49EB-ACA9-9A640055F170}.Release|x64.Build.0 = Release|Any CPU
+		{FDFA662D-5C34-4E87-A324-3D32DB9FE34B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDFA662D-5C34-4E87-A324-3D32DB9FE34B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDFA662D-5C34-4E87-A324-3D32DB9FE34B}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{FDFA662D-5C34-4E87-A324-3D32DB9FE34B}.Debug|x64.Build.0 = Debug|Any CPU
+		{FDFA662D-5C34-4E87-A324-3D32DB9FE34B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDFA662D-5C34-4E87-A324-3D32DB9FE34B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDFA662D-5C34-4E87-A324-3D32DB9FE34B}.Release|x64.ActiveCfg = Release|Any CPU
+		{FDFA662D-5C34-4E87-A324-3D32DB9FE34B}.Release|x64.Build.0 = Release|Any CPU
+		{3F961C54-4326-4936-A034-434D85F55337}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F961C54-4326-4936-A034-434D85F55337}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F961C54-4326-4936-A034-434D85F55337}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{3F961C54-4326-4936-A034-434D85F55337}.Debug|x64.Build.0 = Debug|Any CPU
+		{3F961C54-4326-4936-A034-434D85F55337}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F961C54-4326-4936-A034-434D85F55337}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F961C54-4326-4936-A034-434D85F55337}.Release|x64.ActiveCfg = Release|Any CPU
+		{3F961C54-4326-4936-A034-434D85F55337}.Release|x64.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A8146432-162E-4A74-96F8-A1E6EEA464E9} = {3929ECAE-0CEC-4906-BE5F-1D6DF2B3CAA9}
+		{14BBF954-BC6C-43BE-94E0-7D7E15F1DE1E} = {92CAD9BB-62DA-460A-978F-244B7EDAD576}
+		{BDA70AC9-EBFB-4626-A3F5-697C03411E67} = {FAF71820-AC17-4A46-B6CE-E6391F97200D}
+		{2D3355D6-9CB0-49EB-ACA9-9A640055F170} = {3929ECAE-0CEC-4906-BE5F-1D6DF2B3CAA9}
+		{3F961C54-4326-4936-A034-434D85F55337} = {179D0A89-E3F4-4517-8DA2-BFE48810B93A}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9BFFE061-177F-4070-8553-FEDAD9CFCDDA}
+	EndGlobalSection
+EndGlobal

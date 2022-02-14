@@ -1,0 +1,65 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>net5.0</TargetFramework>
+		<OutputType>Exe</OutputType>
+		<AzureFunctionsVersion>v3</AzureFunctionsVersion>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Compile Remove="Messages\Munich\**" />
+		<EmbeddedResource Remove="Messages\Munich\**" />
+		<None Remove="Messages\Munich\**" />
+	</ItemGroup>
+	<ItemGroup>
+		<Compile Remove="Application\IMunichApp.cs" />
+		<Compile Remove="Application\Munich.cs" />
+		<Compile Remove="Munich.cs" />
+		<Compile Remove="MunichExtensions.cs" />
+		<Compile Remove="Startup.cs" />
+		<Compile Remove="SwaggerRanderer.cs" />
+	</ItemGroup>
+	<ItemGroup>
+		<None Remove="appsettings.json" />
+	</ItemGroup>
+	<ItemGroup>
+		<Resource Include="appsettings.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Resource>
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="EAE.Solutions.CosmosDB.Security.ManagedIdentity" Version="0.7.3" />
+		<PackageReference Include="Microsoft.Azure.Core.NewtonsoftJson" Version="1.0.0" />
+		<PackageReference Include="Microsoft.Azure.Functions.Worker" Version="1.6.0" />
+		<PackageReference Include="Microsoft.Azure.Functions.Worker.Extensions.Http" Version="3.0.13" />
+		<PackageReference Include="Microsoft.Azure.Functions.Worker.Extensions.OpenApi" Version="1.0.0" />
+		<PackageReference Include="Microsoft.Azure.Functions.Worker.Sdk" Version="1.3.0" OutputItemType="Analyzer" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\ContosoCargo.DigitalDocument.TokenService.Client\ContosoCargo.DigitalDocument.TokenService.Client.csproj" />
+		<ProjectReference Include="..\ContosoCargo.DigitalDocument.TokenService.Models\ContosoCargo.DigitalDocument.TokenService.Models.csproj" />
+	</ItemGroup>
+	<ItemGroup>
+		<Reference Include="Microsoft.Solutions.NFT">
+			<HintPath>..\TokenServiceSDK\Microsoft.Solutions.NFT.dll</HintPath>
+		</Reference>
+	</ItemGroup>
+	<ItemGroup>
+	  <Compile Update="ContosoCargo.cs">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Compile>
+	</ItemGroup>
+	<ItemGroup>
+		<None Update="application.settings.json">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="host.json">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="local.settings.json">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+			<CopyToPublishDirectory>Never</CopyToPublishDirectory>
+		</None>
+
+	</ItemGroup>
+</Project>

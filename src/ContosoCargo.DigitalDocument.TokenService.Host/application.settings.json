@@ -1,0 +1,77 @@
+// Copyright (c) Microsoft Corporation.
+// Licensed under the MIT license.
+
+{
+  "App": {
+    "ServiceEndpoint": "{ServiceEndpoint}",
+    "SubscriptionId": "{SubscriptionId}",
+    "ResourceGroupName": "{ResourceGroupName}",
+    "DatabaseAccountName": "{DatabaseAccountName}",
+    "ManagedIdentityId": "{ManagedIdentityId}"
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

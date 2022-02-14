@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "newProfile1": {
+      "commandName": "Snapshot Debugger"
+    },
+    "Profile 1": {
+      "commandName": "Project",
+      "commandLineArgs": "host start  --verbose"
+    }
+  }
+}
