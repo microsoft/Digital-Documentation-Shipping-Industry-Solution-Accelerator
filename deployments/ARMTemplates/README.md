@@ -29,6 +29,7 @@ Check here for more information on [cloning a repository](https://docs.github.co
     ```console
     PS C:\Users\>CD <directory path>
     ```
+    **Remember to write down all of the output values printed on the screen. These will be required in the next step (when deploying Azure Function code).**
 
 3. Run the **resourcedeployment.ps1** with the following parameters:
 ```.\resourcedeployment.ps1 <SubscriptionId> <location>```
@@ -101,8 +102,6 @@ After the completion of the script, check to see that all of the Azure resources
  
     ![alt text](/documents/media/CosmosDbIdentityVerify.png)
 
-
-**Remember to write down all of the output values printed on the screen. These will be required in the next step (when deploying Azure Function code).**
 
 **You've successfully deployed all the resources!**
 

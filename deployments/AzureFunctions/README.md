@@ -51,11 +51,11 @@ If these are not available, please follow the [resource deployment](../ARMTempla
     
     ![alt text](/documents/media/AzureFunctionURLandHostkey.png)
 
-For next steps, please go to [**Setup Console Application**](/documents/README.md).
+For next steps, please go to [**Windows Client Application**](/documents/README.md).
 
 ---
 
-## Detail of the deployment script
+## Detail of the Deployment Script
 1. Log in to the Azure portal
 
     ```
@@ -66,7 +66,7 @@ For next steps, please go to [**Setup Console Application**](/documents/README.m
     ```
     az account set --subscription mysubscriptionid
     ```
-3. Set Up Azure function application
+3. Set up the Azure Function application
 
     ```
     Set-location "..\..\src"
@@ -87,7 +87,7 @@ For next steps, please go to [**Setup Console Application**](/documents/README.m
     func azure functionapp publish $FunctionAppName --csharp --force
     Set-Location "..\..\deployments\AzureFunctions"
     ```
-6. Update function App configuration
+6. Update function app configuration
 
     ```
     az functionapp config appsettings set --name $FunctionAppName --resource-group $resourcegroupName --settings "FUNCTIONS_WORKER_RUNTIME=dotnet-isolated"

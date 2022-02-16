@@ -1,4 +1,4 @@
-# Digital Shipping Documentation Solution Accelerator
+# Digital Documentation for the Shipping Industry Solution Accelerator
 
 ## About this Repository
 
@@ -7,12 +7,12 @@ Today’s supply chains depend on a growing list of international and domestic p
 To better meet customer demand and keep the increasingly complex systems running smoothly leaders are turning to intelligent shipping documentation.
 Digital documentation solutions that leverage the unique advantages of blockchain technology deliver improved speed and agility, while also providing transparency and traceability to internal and external stakeholders.  
 
-The Digital Shipping Documentation Solution Accelerator shows you how to complete shipping agreements faster, with improved security, when transacting with new and existing customers all over the world.
+The Digital Documentation for the Shipping Industry Solution Accelerator shows you how to complete shipping agreements faster, with improved security, when transacting with new and existing customers all over the world.
 The solution uses a private blockchain network to document every step of the order process in a way that improves the overall experience for everyone involved.
 
 Through the use of a secure, distributed, immutable, and automatable network of blockchain platforms, every business transaction between shippers and carriers is tokenized and shared. 
 Use of blockchain technology practically eilminates the risk of data tampering in the shipment order process, between quotation and booking, as every business participant can access the shared ledger of transaction events.
-This solution accellerator is focused on the shipping industry, though with a little imagination it can serve as model for any number of use cases in a multitude of industries. 
+This solution accelerator is focused on the shipping industry, though with a little imagination it can serve as model for any number of use cases in a multitude of industries. 
 
 ### Traditional Shipping Process 
 ---
@@ -28,10 +28,10 @@ Traditional shipping industry processes are fragmented, with limited data sharin
 ### Unified Shipping Process  
 ---
 
-The Digital Shipping Documentation Solution Accelerator shows how the traditional order and quotation processes can be made more agile within full and/or semi-trusted business relationships.  
+This accelerator shows how the traditional order and quotation processes can be made more agile within full and/or semi-trusted business relationships.  
 This new technology can reduce the time needed to complete business deals and empowers companies to easily and securely negotiate rates with new customers all over the world.  
 
-​While this Solution Accelerator was built to improve transparency within the shipping industry, it is applicable to almost any business process that requires transparency and traceability among participants.
+​While this accelerator was built to improve transparency within the shipping industry, it is applicable to almost any business process that requires transparency and traceability among participants.
 
 The diagram below shows how traditional processes can be consolidated and managed as a single process using NFT Tokens.
 
