@@ -25,9 +25,9 @@ Check here for more information on [cloning a repository](https://docs.github.co
 ## Step 2. Deploy Digital Shipping Resources
 1. Run [PowerShell 7.1](https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell?view=powershell-7.1)
 
-2. Run the Change Directory command to navigate to the location where **resourcedeployment.ps1** is located
+2. Run Change Directory command to Navigate to the Path using the resourcedeployment.ps1 location **deployments/ARMTemplates/Bicep/**
     ```console
-    PS C:\Users\>CD <directory path>
+    PS C:\Users\>cd <directory path>
     ```
     **Remember to write down all of the output values printed on the screen. These will be required in the next step (when deploying Azure Function code).**
 

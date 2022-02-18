@@ -12,7 +12,7 @@ To successfully deploy the digital shipping industry azure functions, you will n
  7. [Azure Core Tool installed](https://docs.microsoft.com/en-us/azure/azure-functions/functions-run-local?tabs=v4%2Cwindows%2Ccsharp%2Cportal%2Cbash#v2)
  8. Azure Non-Fungible Token Solution Accelerator
 
-If these are not available, please follow the [resource deployment](../ARMTemplates/ResourceDeployment.md) steps. 
+If these are not available, please follow the [resource deployment](../ARMTemplates/README.md) steps. 
 
 ## Steps for Azure Functions Deployment via PowerShell
 
@@ -23,24 +23,26 @@ If these are not available, please follow the [resource deployment](../ARMTempla
     ```
 ### Step 2. Execute the PowerShell deployment script.
 1. Run [PowerShell 7.1](https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell?view=powershell-7.1)
+
 2. Run the Change Directory command to navigate to the location where **deployazurefunction.ps1** is located
     ```console
-    PS C:\Users\>CD <directory path>
+    PS C:\Users\>cd <directory path>
     ```
-3. Provide the following detail in deployazurefunction.ps1 from the previous script(resourcedeployment.ps1) output
+3. Run the .\deployazurefunction.ps1
+    ```console
+    Powershell.exe -executionpolicy remotesigned -File .\deployazurefunction.ps1
+    ```
+4. Accept the log-in request through your browser
+
+5. Enter the following detail in console when prompted which are obtained from the previous script(resourcedeployment.ps1) output
     ```
     SubscriptionId: The Subscription ID for where you want to manage your resources
     ResourcegroupName: Resource group name where the resources are deployed
     DatabaseAccountName : Azure Cosmos DB account name
-    serviceEndpointUrl: NFT service endpoint URL received after deployment of Azure Non Fungible Token Solution Accelerator.
+    serviceEndpointUrl: NFT service endpoint URL received after deployment of **Azure Non Fungible Token Solution Accelerator**
     ManagedIdentityId: User Assigned Identity Client Id
     FunctionAppName: Name of app that requires Azure Functions support
     ```
-4. Run the .\deployazurefunction.ps1
-    ```console
-    PS  <directory path> \deployments\AzureFunctions>Powershell.exe -executionpolicy remotesigned -File .\deployazurefunction.ps1
-    ```
-5. Accept the log-in request through your browser
 
 6. After the successful execution of the script, the Azure Functions will be deployed.
 
@@ -55,7 +57,7 @@ For next steps, please go to [**Windows Client Application**](/documents/README.
 
 ---
 
-## Detail of the Deployment Script
+## Description of the deployment script (Optional)
 1. Log in to the Azure portal
 
     ```

@@ -4,8 +4,8 @@
   "metadata": {
     "_generator": {
       "name": "bicep",
-      "version": "0.4.1124.51302",
-      "templateHash": "17409979608818972943"
+      "version": "0.4.1272.37030",
+      "templateHash": "16329614470748989882"
     }
   },
   "variables": {
@@ -142,6 +142,10 @@
     "cosmosName": {
       "type": "string",
       "value": "[variables('cosmosAccountName')]"
+    },
+    "functionAppName": {
+      "type": "string",
+      "value": "[variables('funcAppName')]"
     }
   }
 }

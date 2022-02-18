@@ -38,14 +38,16 @@ $jsonString = ConvertFrom-Json $joinedString
 
 $DShipUserIdentityID = $jsonString.properties.outputs.DShipUserIdentityID.value
 $cosmosName  = $jsonString.properties.outputs.cosmosName.value
+$functionAppName  = $jsonString.properties.outputs.functionAppName.value
 
 Write-Host "--------------------------------------------`r`n" -ForegroundColor White
 Write-Host "Deployment output: `r`n" -ForegroundColor White
 Write-Host "Subscription Id: $subscriptionID `r`n" -ForegroundColor Yellow
 Write-Host "Digital Shipping resource group: $resourcegroupName `r`n" -ForegroundColor Yellow
-Write-Host "Cosmos DB Account: $cosmosName" -ForegroundColor Yellow
-Write-Host "User Assigned Identity Client Id: $DShipUserIdentityID " -ForegroundColor Yellow
-Write-Host "--------------------------------------------`r`n" -ForegroundColor White
+Write-Host "Cosmos DB Account: $cosmosName  `r`n" -ForegroundColor Yellow
+Write-Host "User Assigned Identity Client Id: $DShipUserIdentityID `r`n" -ForegroundColor Yellow
+Write-Host "Function App Name: $functionAppName `r`n" -ForegroundColor Yellow
+Write-Host "--------------------------------------------" -ForegroundColor White
 
 
 Write-Host "All resources are deployed successfully.....`r`n" -ForegroundColor Green

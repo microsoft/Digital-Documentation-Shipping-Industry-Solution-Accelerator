@@ -1,6 +1,6 @@
-# Digital Documentation for the Shipping Industry Solution Accelerator
+![DDSI Banner](./documents/media/DDSIBanner.png)
 
-## About this Repository
+## About This Repository
 
 Today’s supply chains depend on a growing list of international and domestic partners.  
 
@@ -74,36 +74,33 @@ For additional training and support, please see:
  
 ## Getting Started
 
-1. Clone/download this repo onto your computer and then walk through each of these steps in order, following the steps outlined in each of the README files.
+Clone/download this repo onto your computer and then walk through each of these steps in order, following the steps outlined in each of the README files.
 
-1. Deploy the needed [resources](./deployments/ARMTemplates/README.md) 
-    - The resources in this folder can be used to deploy the required cloud services into your Azure Subscription. This can be done either via the [Azure Portal](https://portal.azure.com) or by using the [PowerShell script](./deployments/ARMTemplates/Bicep/resourcedeployment.ps1) included in the deployment folder.
+### [01. Azure Resources Deployment](./deployments/ARMTemplates/README.md):
 
-    - After resource deployment, you will have an Azure Function App, Azure App Service Plan, Azure Storage Account, Azure Cosmos DB Account, and Azure Managed Identity.
+The resources in this folder can be used to deploy the required cloud services into your Azure Subscription. This can be done either via the [Azure Portal](https://portal.azure.com) or by using the [PowerShell script](./deployments/ARMTemplates/Bicep/resourcedeployment.ps1) included in the deployment folder.
 
-    - Resources can also be deployed into your Azure Subscription by using one of these Deploy Azure links:  
+After resource deployment, you will have an Azure Function App, Azure App Service Plan, Azure Storage Account, Azure Cosmos DB Account, and Azure Managed Identity.
 
-        [![Deploy to Azure](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.svg?sanitize=true)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmicrosoft%2FDigital-Documentation-Shipping-Industry-Solution-Accelerator%2Fmaster%2Fdeployments%2FARMTemplates%2FJson%2Fmain.json)&emsp;&emsp;&emsp;
-        [![Deploy To Azure US Gov](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazuregov.svg?sanitize=true)](https://portal.azure.us/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmicrosoft%2FDigital-Documentation-Shipping-Industry-Solution-Accelerator%2Fmaster%2Fdeployments%2FARMTemplates%2FJson%2Fmain.json)&emsp;&emsp;&emsp;
+Resources can also be deployed into your Azure Subscription by using one of these Deploy Azure links:  
 
-        **Note: Follow "Step 3" in [Azure Resources Deployment](./deployments/ARMTemplates/README.md#step-3-configure-and-assign-managed-identity) to configure managed identity permission if you have deployed resources using above Azure links.**
+[![Deploy to Azure](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.svg?sanitize=true)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmicrosoft%2FDigital-Documentation-Shipping-Industry-Solution-Accelerator%2Fmaster%2Fdeployments%2FARMTemplates%2FJson%2Fmain.json)&emsp;&emsp;&emsp;
+[![Deploy To Azure US Gov](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazuregov.svg?sanitize=true)](https://portal.azure.us/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmicrosoft%2FDigital-Documentation-Shipping-Industry-Solution-Accelerator%2Fmaster%2Fdeployments%2FARMTemplates%2FJson%2Fmain.json)&emsp;&emsp;&emsp;
 
-1. Deploy the [Azure Functions](./deployments/AzureFunctions/README.md) using a [PowerShell script](./deployments/AzureFunctions/deployazurefunction.ps1) that will deploy source code from the repo to Azure Functions.  
+**Note: Follow "Step 3" in [Resources Deployment](./deployments/ARMTemplates/README.md#step-3-configure-and-assign-managed-identity) to configure managed identity permission if you have deployed resources using above Azure links.**
 
-1. Deploy the [sample client application](./documents/README.md) to test and demonstrate the solution.  
+### [02. Azure Functions Deployment](./deployments/AzureFunctions/README.md):
+Deploy the [Azure Functions](./deployments/AzureFunctions/README.md) using a [PowerShell script](./deployments/AzureFunctions/deployazurefunction.ps1) that will deploy source code from the repo to Azure Functions.  
+
+### [03. Solution Testing](./documents/README.md):
+Use the [sample client application](./documents/README.md) to test and demonstrate the solution.  
 
 ## Folders
 
-
-### [Resource Deployment](./deployments/ARMTemplates)
-Contains resource deployment scripts to deploy the resources required to complete this project. 
-
-### [Application Deployment](./deployments/AzureFunctions)
-This folder contains deployment scripts need to setup the token API
-
-### [Source](./src)
-This folder contains all source code for Contoso Cargo sample application. 
-
+Refer to the following folders to learn about the solution components specific to **Azure Digital Documentation Shipping Industry Solution Accelerator**. 
+- [deployment](./deployments): Contains ARM template, resource deployment script, application deployment script, and documentations to deploy the Azure resources and applications. 
+- [documents](./documents): Contains screenshots and client app/postman documentation for this solution accelerator. 
+- [src](./src): Contains all source code for this Solution Accelerator 
 
 
 ## Microsoft Open Source Code of Conduct

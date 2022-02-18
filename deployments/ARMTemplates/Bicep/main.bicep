@@ -131,3 +131,4 @@ resource traceTag_resource 'Microsoft.Resources/deployments@2021-04-01' = {
 
 output DShipUserIdentityID string = DShipUserIdentity_resource.properties.clientId
 output cosmosName string = cosmosAccountName_resource.name
+output functionAppName string = funcAppName_resource.name
